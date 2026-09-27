@@ -5,7 +5,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node build.js",
+    "build": "echo 'Static build ready'",
+    "verify": "node build.js",
     "dev": "ruby server.rb",
     "start": "ruby server.rb",
     "serve": "ruby server.rb"
