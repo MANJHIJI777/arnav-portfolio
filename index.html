@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARNAV KUMAR — Video Editor Portfolio</title>
+  <meta name="description" content="Video editor creating cinematic, high-retention content for brands, creators and businesses. Minimal, editorial, quietly confident.">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ARNAV KUMAR — Video Editor Portfolio">
+  <meta property="og:description" content="Cinematic, high-retention video editing for visionary brands and creators.">
+  <meta property="og:image" content="assets/showreel_poster.jpg">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23111111'/><path d='M10 8h3v16h-3zM15 16l8-8v16l-8-8z' fill='%23F7F7F5'/></svg>">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- Minimal Custom Cursor (Desktop Only) -->
+  <div class="custom-cursor-pill" id="customCursor">VIEW →</div>
+
+  <!-- ========================================================================
+       NAVIGATION
+       ======================================================================== -->
+  <header class="site-nav">
+    <div class="container">
+      <div class="nav-inner">
+        <!-- Brand -->
+        <a href="#top" class="nav-brand" aria-label="Home">
+          <span class="brand-name">ARNAV KUMAR</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="nav-menu" aria-label="Main Navigation">
+          <a href="#work" class="nav-link">Work</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#process" class="nav-link">Process</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <!-- Availability Status -->
+        <div class="nav-availability" title="Available for selected projects in Q4/Q1">
+          <span class="status-dot"></span>
+          <span>AVAILABLE FOR WORK</span>
+        </div>
+
+        <!-- Mobile Nav Toggle -->
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-links">
+      <a href="#work" class="mobile-drawer-link">01 — Work</a>
+      <a href="#services" class="mobile-drawer-link">02 — Services</a>
+      <a href="#process" class="mobile-drawer-link">03 — Process</a>
+      <a href="#about" class="mobile-drawer-link">04 — About</a>
+      <a href="#contact" class="mobile-drawer-link">05 — Contact</a>
+    </div>
+    <div style="border-top: 1px solid var(--border-light); padding-top: 24px;">
+      <p class="mono-tag" style="margin-bottom: 8px;">DIRECT INQUIRIES</p>
+      <a href="mailto:workwitharnav.creative@gmail.com" style="font-size: 1.125rem; font-weight: 500;">workwitharnav.creative@gmail.com</a>
+    </div>
+  </div>
+
+  <main id="top">
+
+    <!-- ======================================================================
+         HERO SECTION
+         ====================================================================== -->
+    <section class="hero-section">
+      <div class="container">
+        <!-- Micro Details -->
+        <div class="hero-meta-top fade-up">
+          <span class="label-caps">VIDEO EDITOR</span>
+          <span class="mono-tag">BASED IN INDIA — AVAILABLE WORLDWIDE</span>
+        </div>
+
+        <!-- Large Editorial Headline -->
+        <div class="hero-title-wrap fade-up">
+          <h1 class="editorial-headline hero-headline">
+            I EDIT STORIES<br>THAT HOLD ATTENTION.
+          </h1>
+        </div>
+
+        <!-- Subrow: Description & CTAs -->
+        <div class="hero-subrow fade-up">
+          <p class="hero-description">
+            Video editor creating cinematic, high-retention content for brands, creators and businesses. Focused on pacing, narrative rhythm, and visual clarity.
+          </p>
+          <div class="hero-actions">
+            <a href="#work" class="btn-primary">
+              VIEW WORK
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 1v12M7 13l5-5M7 13L2 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#contact" class="btn-secondary">
+              CONTACT
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 9.5l7-7M9.5 9.5V2.5H2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         FEATURED SHOWREEL (THE VISUAL CENTERPIECE)
+         ====================================================================== -->
+    <section class="showreel-section">
+      <div class="container">
+        <div class="showreel-frame js-open-showreel fade-up" data-cursor="play" role="button" aria-label="Play 2026 Editorial Showreel">
+          <video class="showreel-media" muted loop autoplay playsinline preload="metadata">
+            <source src="assets/work2.mp4#t=0.001" type="video/mp4">
+          </video>
+
+          <div class="showreel-overlay">
+            <!-- Top bar -->
+            <div class="showreel-top-bar">
+              <span class="showreel-badge">
+                <span class="rec-indicator"></span>
+                2026 SHOWREEL
+              </span>
+              <span class="showreel-badge">4K MASTER // 24 FPS</span>
+            </div>
+
+            <!-- Center play icon -->
+            <div class="showreel-center-play">
+              <div class="play-circle">
+                <svg viewBox="0 0 24 24">
+                  <polygon points="6,3 20,12 6,21"></polygon>
+                </svg>
+              </div>
+              <span class="play-text">PLAY SHOWREEL</span>
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="showreel-bottom-bar">
+              <span class="showreel-title">Cinematic, Commercial &amp; Creator Works</span>
+              <span class="showreel-runtime">02:14 / 24 FPS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SELECTED WORK SECTION
+         ====================================================================== -->
+    <section class="section-spacer" id="work">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="work-header fade-up">
+          <div class="work-header-left">
+            <span class="label-caps">PORTFOLIO</span>
+            <h2 class="section-heading">SELECTED WORK</h2>
+            <p class="section-subheading">A selection of edits, campaigns and visual stories.</p>
+          </div>
+
+          <!-- Category Filter Pills -->
+          <div class="work-filter-pills" role="tablist" aria-label="Filter projects">
+            <button class="filter-pill active" data-filter="all" role="tab">ALL (04)</button>
+            <button class="filter-pill" data-filter="commercial" role="tab">COMMERCIAL</button>
+            <button class="filter-pill" data-filter="brand" role="tab">BRAND &amp; MOTION</button>
+            <button class="filter-pill" data-filter="shortform" role="tab">VERTICAL / REEL</button>
+          </div>
+        </div>
+
+        <!-- 2-Column Work Grid -->
+        <div class="work-grid">
+
+          <!-- PROJECT 01: WORK 1 (VERTICAL 9:16) -->
+          <article class="project-item fade-up" data-category="shortform brand commercial" data-cursor="view">
+            <a href="projects/work1.html" class="project-thumbnail-wrapper aspect-vertical" aria-label="View Work 1 Video Project">
+              <video class="project-video-preview" muted loop playsinline preload="metadata">
+                <source src="assets/work1.mp4#t=0.001" type="video/mp4">
+              </video>
+              <span class="project-video-badge">▶ 9:16 VERTICAL // 00:38</span>
+              <div class="project-hover-overlay">
+                <span class="project-view-indicator">
+                  WATCH VIDEO / CASE STUDY
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5l7-7M9.5 9.5V2.5H2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                </span>
+              </div>
+            </a>
+            <div class="project-info">
+              <div class="project-meta-row">
+                <span class="project-index">01</span>
+                <span class="project-category">Short-form / Narrative Cut</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">
+                <a href="projects/work1.html">WORK 01 // NARRATIVE CUT</a>
+                <span class="project-title-arrow">↗</span>
+              </h3>
+              <p class="project-description">
+                Cinematic vertical cut engineered with rapid pacing, precision match cuts, and custom atmospheric sound design.
+              </p>
+            </div>
+          </article>
+
+          <!-- PROJECT 02: WORK 2 (HORIZONTAL 16:9) -->
+          <article class="project-item fade-up" data-category="commercial brand" data-cursor="view">
+            <a href="projects/work2.html" class="project-thumbnail-wrapper aspect-horizontal" aria-label="View Work 2 Video Project">
+              <video class="project-video-preview" muted loop playsinline preload="metadata">
+                <source src="assets/work2.mp4#t=0.001" type="video/mp4">
+              </video>
+              <span class="project-video-badge">▶ 16:9 HORIZONTAL // 00:15</span>
+              <div class="project-hover-overlay">
+                <span class="project-view-indicator">
+                  WATCH VIDEO / CASE STUDY
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5l7-7M9.5 9.5V2.5H2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                </span>
+              </div>
+            </a>
+            <div class="project-info">
+              <div class="project-meta-row">
+                <span class="project-index">02</span>
+                <span class="project-category">Brand / Commercial Spot</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">
+                <a href="projects/work2.html">WORK 02 // COMMERCIAL SPOT</a>
+                <span class="project-title-arrow">↗</span>
+              </h3>
+              <p class="project-description">
+                High-velocity commercial cut with speed-ramped cut frequencies, kinetic text choreography, and punchy sub-bass impacts.
+              </p>
+            </div>
+          </article>
+
+          <!-- PROJECT 03: WORK 3 (HORIZONTAL 16:9) -->
+          <article class="project-item fade-up" data-category="commercial brand" data-cursor="view">
+            <a href="projects/work3.html" class="project-thumbnail-wrapper aspect-horizontal" aria-label="View Work 3 Video Project">
+              <video class="project-video-preview" muted loop playsinline preload="metadata">
+                <source src="assets/work3.mp4#t=0.001" type="video/mp4">
+              </video>
+              <span class="project-video-badge">▶ 16:9 HORIZONTAL // 01:30</span>
+              <div class="project-hover-overlay">
+                <span class="project-view-indicator">
+                  WATCH VIDEO / CASE STUDY
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5l7-7M9.5 9.5V2.5H2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                </span>
+              </div>
+            </a>
+            <div class="project-info">
+              <div class="project-meta-row">
+                <span class="project-index">03</span>
+                <span class="project-category">Motion Design / Film</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">
+                <a href="projects/work3.html">WORK 03 // MOTION &amp; RHYTHM</a>
+                <span class="project-title-arrow">↗</span>
+              </h3>
+              <p class="project-description">
+                Dynamic visual narrative with fluid scene transitions, typographic pacing, and polished widescreen framing.
+              </p>
+            </div>
+          </article>
+
+          <!-- PROJECT 04: WORK 4 (VERTICAL 9:16) -->
+          <article class="project-item fade-up" data-category="shortform brand" data-cursor="view">
+            <a href="projects/work4.html" class="project-thumbnail-wrapper aspect-vertical" aria-label="View Work 4 Video Project">
+              <video class="project-video-preview" muted loop playsinline preload="metadata">
+                <source src="assets/work4.mp4#t=0.001" type="video/mp4">
+              </video>
+              <span class="project-video-badge">▶ 9:16 VERTICAL // 00:53</span>
+              <div class="project-hover-overlay">
+                <span class="project-view-indicator">
+                  WATCH VIDEO / CASE STUDY
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5l7-7M9.5 9.5V2.5H2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                </span>
+              </div>
+            </a>
+            <div class="project-info">
+              <div class="project-meta-row">
+                <span class="project-index">04</span>
+                <span class="project-category">Creator / Short-form Reel</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">
+                <a href="projects/work4.html">WORK 04 // VISUAL SHOWCASE</a>
+                <span class="project-title-arrow">↗</span>
+              </h3>
+              <p class="project-description">
+                Fast-paced vertical reel engineered for mobile platforms, featuring rhythmic cuts, speed shifts, and vivid color tones.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SERVICES SECTION ("WHAT I DO")
+         ====================================================================== -->
+    <section class="section-spacer" id="services">
+      <div class="container">
+        <div class="fade-up">
+          <span class="label-caps">CAPABILITIES</span>
+          <h2 class="section-heading">WHAT I DO</h2>
+          <p class="section-subheading">End-to-end post-production, from rough assembly to polished master.</p>
+        </div>
+
+        <div class="services-list fade-up">
+
+          <!-- 01 -->
+          <div class="service-row">
+            <span class="service-index">01</span>
+            <h3 class="service-title">SHORT-FORM EDITING</h3>
+            <p class="service-desc">Reels, TikTok, YouTube Shorts, and high-velocity social content built with punchy narrative hooks and maximum retention.</p>
+            <div class="service-arrow">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.75 9h10.5M9.75 4.5l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+          <!-- 02 -->
+          <div class="service-row">
+            <span class="service-index">02</span>
+            <h3 class="service-title">LONG-FORM EDITING</h3>
+            <p class="service-desc">YouTube documentaries, masterclasses, narrative interviews, and educational series structured with intentional emotional rhythm.</p>
+            <div class="service-arrow">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.75 9h10.5M9.75 4.5l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+          <!-- 03 -->
+          <div class="service-row">
+            <span class="service-index">03</span>
+            <h3 class="service-title">COMMERCIAL EDITING</h3>
+            <p class="service-desc">Brand films, product launch trailers, and broadcast advertisements where every cut reinforces positioning and design ethos.</p>
+            <div class="service-arrow">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.75 9h10.5M9.75 4.5l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+          <!-- 04 -->
+          <div class="service-row">
+            <span class="service-index">04</span>
+            <h3 class="service-title">MOTION DESIGN</h3>
+            <p class="service-desc">Kinetic typography, screen replacements, UI animations, lower thirds, and visual effects that feel seamless, not overcooked.</p>
+            <div class="service-arrow">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.75 9h10.5M9.75 4.5l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+          <!-- 05 -->
+          <div class="service-row">
+            <span class="service-index">05</span>
+            <h3 class="service-title">COLOR &amp; SOUND</h3>
+            <p class="service-desc">ACES / DaVinci YRGB color grading, film stock emulation, noise restoration, multi-track foley design, and audio normalization.</p>
+            <div class="service-arrow">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.75 9h10.5M9.75 4.5l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PROCESS SECTION ("FROM RAW FOOTAGE TO FINAL CUT")
+         ====================================================================== -->
+    <section class="section-spacer" id="process">
+      <div class="container">
+        <div class="fade-up">
+          <span class="label-caps">METHODOLOGY</span>
+          <h2 class="section-heading">FROM RAW FOOTAGE TO FINAL CUT.</h2>
+          <p class="section-subheading">A disciplined four-phase editorial framework engineered for clarity and impact.</p>
+        </div>
+
+        <div class="process-grid">
+
+          <!-- 01 -->
+          <div class="process-step fade-up">
+            <span class="process-index">01</span>
+            <h3 class="process-step-title">UNDERSTAND</h3>
+            <p class="process-step-desc">
+              Deconstruct raw footage, director intent, audience psychology, and key retention milestones before cutting a single frame.
+            </p>
+          </div>
+
+          <!-- 02 -->
+          <div class="process-step fade-up">
+            <span class="process-index">02</span>
+            <h3 class="process-step-title">STRUCTURE</h3>
+            <p class="process-step-desc">
+              Assemble the timeline foundation. Build pacing, narrative arc, hook placement, and eliminate every unnecessary second.
+            </p>
+          </div>
+
+          <!-- 03 -->
+          <div class="process-step fade-up">
+            <span class="process-index">03</span>
+            <h3 class="process-step-title">REFINE</h3>
+            <p class="process-step-desc">
+              Layer kinetic typography, micro-sound design, spatial foley, seamless match cuts, and balanced DaVinci Resolve color science.
+            </p>
+          </div>
+
+          <!-- 04 -->
+          <div class="process-step fade-up">
+            <span class="process-index">04</span>
+            <h3 class="process-step-title">DELIVER</h3>
+            <p class="process-step-desc">
+              Export pristine masters formatted for YouTube, broadcast, or vertical social—color-managed and ready to publish.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ABOUT SECTION ("A LITTLE ABOUT ME")
+         ====================================================================== -->
+    <section class="section-spacer" id="about">
+      <div class="container">
+        <div class="about-grid">
+
+          <!-- Portrait Column -->
+          <div class="about-image-wrap fade-up">
+            <img src="assets/editor_portrait.jpg" alt="Arnav Kumar at DaVinci Resolve color console" class="about-image" loading="lazy">
+            <div class="about-image-caption">
+              <span class="mono-tag">NEW DELHI // IST</span>
+            </div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="about-content fade-up">
+            <span class="label-caps">ABOUT THE EDITOR</span>
+            <h2 class="section-heading">A LITTLE ABOUT ME</h2>
+
+            <p class="about-statement">
+              I'm a video editor focused on turning raw footage into clear, engaging and visually refined content.
+            </p>
+
+            <p class="about-body">
+              I care about pacing, storytelling, typography, sound design and the small details that make an edit feel intentional. Over the past six years, I have edited launch trailers, branded documentaries, and digital series for tech pioneers, educational platforms, and creators.
+            </p>
+
+            <p class="about-body">
+              I treat editing like musical arrangement: where cuts have cadence, silence carries weight, and typography speaks in harmony with the frame.
+            </p>
+
+            <div>
+              <p class="label-caps about-tools-label">SOFTWARE PROFICIENCY</p>
+              <div class="software-grid">
+
+                <!-- 01: Premiere Pro -->
+                <div class="software-card">
+                  <div class="software-icon">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="32" height="32" rx="7" fill="#00005B"/>
+                      <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.25" stroke="#9999FF" stroke-width="1.5"/>
+                      <text x="16" y="21.5" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Geist', sans-serif" font-weight="700" font-size="14.5" fill="#9999FF" text-anchor="middle" letter-spacing="-0.5px">Pr</text>
+                    </svg>
+                  </div>
+                  <div class="software-info">
+                    <span class="software-name">Adobe Premiere Pro</span>
+                    <span class="software-role">NLE Editing &amp; Pacing</span>
+                  </div>
+                </div>
+
+                <!-- 02: DaVinci Resolve -->
+                <div class="software-card">
+                  <div class="software-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="24" height="24" rx="5" fill="#141418"/>
+                      <rect x="0.5" y="0.5" width="23" height="23" rx="4.5" stroke="#FFFFFF" stroke-opacity="0.1"/>
+                      <path d="M12.02 4.393c-1.976.089-3.204 1.658-3.214 3.29.019 1.443 1.635 3.481 2.884 4.53.12.099.154.109.33.18.062.025.198-.047.327-.135.36-.245.993-.947 1.648-1.738a7.67 7.67 0 0 0 1.031-1.683c.409-.89.261-1.599.235-1.888a3.983 3.983 0 0 0-.99-1.692 3.36 3.36 0 0 0-2.251-.864z" fill="#E53935"/>
+                      <path d="M16.192 12.315a10.185 10.185 0 0 0-3.244.61c-.15.058-.26.1-.374.17-.057.036-.11.135-.105.292.017.433.29 1.278.624 2.27.384 1.135 1.066 2.27 1.844 2.74a3.23 3.23 0 0 0 2.53.342c.832-.243 1.595-.868 1.962-1.546.986-1.818.19-3.548-1.121-4.417-.447-.296-1.133-.445-1.89-.46-.074 0-.15-.002-.226-.001z" fill="#1E88E5"/>
+                      <path d="M7.76 12.353a6.201 6.201 0 0 0-.752.047c-.596.078-.932.273-1.29.51a3.177 3.177 0 0 0-1.365 1.979c-.075.552-.086 1.053.033 1.507.433 1.389 1.326 2.222 2.847 2.452.636.028 1.37-.063 1.99-.45 1.269-.782 2.08-3.17 2.412-4.742.053-.176.035-.357-.013-.42-.005-.067-.044-.113-.19-.183-.398-.192-1.32-.417-2.375-.6a7.68 7.68 0 0 0-1.297-.1z" fill="#00C853"/>
+                    </svg>
+                  </div>
+                  <div class="software-info">
+                    <span class="software-name">DaVinci Resolve</span>
+                    <span class="software-role">Color Grading &amp; Finishing</span>
+                  </div>
+                </div>
+
+                <!-- 03: Adobe Illustrator -->
+                <div class="software-card">
+                  <div class="software-icon">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="32" height="32" rx="7" fill="#330000"/>
+                      <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="6.25" stroke="#FF9A00" stroke-width="1.5"/>
+                      <text x="16" y="21.5" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Geist', sans-serif" font-weight="700" font-size="14.5" fill="#FF9A00" text-anchor="middle" letter-spacing="-0.5px">Ai</text>
+                    </svg>
+                  </div>
+                  <div class="software-info">
+                    <span class="software-name">Adobe Illustrator</span>
+                    <span class="software-role">Vector Graphics &amp; Assets</span>
+                  </div>
+                </div>
+
+                <!-- 04: CapCut -->
+                <div class="software-card">
+                  <div class="software-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="24" height="24" rx="5" fill="#111114"/>
+                      <rect x="0.5" y="0.5" width="23" height="23" rx="4.5" stroke="#FFFFFF" stroke-opacity="0.1"/>
+                      <g transform="translate(3.5, 3.5) scale(0.7)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.189 6.442V2.671l-4.535 2.383V4.91c.002-1.505-1.078-2.411-2.638-2.411H2.64C.993 2.5 0 3.407 0 4.91V8.72L6.354 12 0 15.316v3.8C0 20.595 1 21.5 2.64 21.5h14.373c1.56 0 2.639-.907 2.639-2.382v-.197l4.536 2.409v-3.828L13.64 12 24.19 6.443zM9.982 13.873l7.797 4.083H2.157l7.825-4.083zm7.741-7.828l-7.742 4.057-7.825-4.057h15.567z" fill="#FFFFFF"/>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="software-info">
+                    <span class="software-name">CapCut</span>
+                    <span class="software-role">Short-Form &amp; Social Reformat</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         TESTIMONIALS SECTION ("CLIENT FEEDBACK")
+         ====================================================================== -->
+    <section class="section-spacer" id="feedback">
+      <div class="container">
+        <div class="fade-up">
+          <span class="label-caps">ENDORSEMENTS</span>
+          <h2 class="section-heading">CLIENT FEEDBACK</h2>
+          <p class="section-subheading">Direct words from directors, course founders, and product teams.</p>
+        </div>
+
+        <div class="testimonials-grid">
+
+          <!-- 01: GRIFFIN WEB SERVICES -->
+          <div class="testimonial-card fade-up">
+            <div>
+              <span class="mono-tag" style="margin-bottom: 12px; display: inline-block;">WEB SERVICES CAMPAIGN</span>
+              <p class="testimonial-quote">
+                "Arnav completely transformed our video output. His pacing, clean typography, and sound design made our web services feel premium and immediately understandable to enterprise clients. Fast turnarounds and zero wasted frames."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <span class="author-name">Griffin Web Services</span>
+              <span class="author-role">Commercial &amp; Web Showcase Videos</span>
+            </div>
+          </div>
+
+          <!-- 02: DARIUS CLARK // I-75 CPA REVIEW COURSE -->
+          <div class="testimonial-card fade-up">
+            <div>
+              <span class="mono-tag" style="margin-bottom: 12px; display: inline-block;">TRAILER &amp; TESTIMONIALS</span>
+              <p class="testimonial-quote">
+                "Arnav edited our flagship course trailer and student testimonial videos with surgical precision. He took hours of raw interview footage and structured it into punchy, high-retention stories that directly drove course enrollments."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <span class="author-name">Darius Clark</span>
+              <span class="author-role">Founder &amp; Lead Instructor, i-75 CPA Review Course</span>
+            </div>
+          </div>
+
+          <!-- 03: MAYANK PAL // WEB & AI AGENTS SERVICES -->
+          <div class="testimonial-card fade-up">
+            <div>
+              <span class="mono-tag" style="margin-bottom: 12px; display: inline-block;">WEB &amp; AI AGENT DEMOS</span>
+              <p class="testimonial-quote">
+                "Explaining complex AI agent architectures and modern web services requires an editor who understands technology and visual rhythm. Arnav’s cuts are dynamic, crisp, and keep the viewer locked in from frame one."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <span class="author-name">Mayank Pal</span>
+              <span class="author-role">Founder, Web &amp; AI Agents Services</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         CONTACT SECTION (DARK SECTION #111111)
+         ====================================================================== -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <!-- Top row -->
+        <div class="contact-top-row fade-up">
+          <span class="label-caps contact-label">GET IN TOUCH</span>
+          <span class="mono-tag" style="color: var(--text-dark-secondary);">TYPICALLY RESPONDS WITHIN 24 HOURS</span>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="contact-main fade-up">
+          <div>
+            <h2 class="editorial-headline contact-headline">
+              HAVE A PROJECT<br>IN MIND?
+            </h2>
+            <p class="contact-subtext">
+              Let's turn your footage into something worth watching.
+            </p>
+          </div>
+
+          <div class="contact-actions">
+            <!-- Primary Action -->
+            <button class="btn-contact-cta js-open-inquiry" type="button">
+              <span>START A PROJECT</span>
+              <span style="font-size: 1.125rem;">→</span>
+            </button>
+
+            <!-- One-Click Copy Email Bar -->
+            <div class="email-copy-bar js-copy-email" data-email="workwitharnav.creative@gmail.com" title="Click to copy email address">
+              <span class="email-address-text">workwitharnav.creative@gmail.com</span>
+              <span class="email-copy-btn">
+                <span>COPY</span>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="4.5" y="4.5" width="7" height="7" rx="1.5" stroke="currentColor"/><path d="M9.5 2.5h-6a1 1 0 00-1 1v6" stroke="currentColor"/></svg>
+              </span>
+              <span class="copy-feedback-toast">COPIED TO CLIPBOARD</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Channels -->
+        <div class="social-links-row fade-up">
+          <a href="https://www.instagram.com/arnav_kumar_manjhi?stkn=MTkwNThucmdsc3ljbg==" target="_blank" rel="noopener noreferrer" class="social-link">
+            Instagram ↗
+          </a>
+          <a href="https://x.com/KumarArnav11415" target="_blank" rel="noopener noreferrer" class="social-link">
+            X (Twitter) ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">ARNAV KUMAR</span>
+        <span class="footer-timecode" id="liveTimecode">NEW DELHI / IST (UTC+05:30) — --:--:--</span>
+        <span class="footer-copyright">&copy; 2026 ARNAV KUMAR. ALL RIGHTS RESERVED.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       SHOWREEL MODAL
+       ======================================================================== -->
+  <div class="modal-backdrop" id="showreelModal" role="dialog" aria-modal="true" aria-label="Editorial Showreel Video Player">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="closeShowreelModal" aria-label="Close Showreel">✕</button>
+      <div class="modal-video-wrap">
+        <video id="modalShowreelVideo" playsinline preload="auto" style="width: 100%; height: 100%; object-fit: contain; background: #000;">
+          <source src="assets/work3.mp4" type="video/mp4">
+        </video>
+        <canvas id="modalShowreelCanvas" style="display: none;"></canvas>
+      </div>
+      <div class="modal-video-controls">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <button id="modalPlayToggle" class="btn-primary" style="padding: 6px 14px; font-size: 0.6875rem;">PLAY</button>
+          <button id="modalAudioToggle" class="btn-secondary" style="padding: 6px 10px; font-size: 0.6875rem; color: #fff;">UNMUTE 🔊</button>
+          <span id="modalTimecode" class="mono-tag" style="color: var(--white);">00:00:00:00</span>
+        </div>
+        <div id="modalProgressBar" style="flex: 1; margin: 0 24px; height: 4px; background: #333; border-radius: 2px; cursor: pointer; position: relative;">
+          <div id="modalProgressFill" style="width: 0%; height: 100%; background: #fff; border-radius: 2px;"></div>
+        </div>
+        <div class="mono-tag" style="color: var(--text-dark-secondary);">SPACE: PLAY/PAUSE // ESC: CLOSE</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       PROJECT INQUIRY MODAL
+       ======================================================================== -->
+  <div class="modal-backdrop" id="inquiryModal" role="dialog" aria-modal="true" aria-label="Start a Project Inquiry">
+    <div class="modal-container inquiry-modal-box">
+      <button class="modal-close-btn" id="closeInquiryModal" style="background-color: var(--border-light); color: var(--text-primary);" aria-label="Close Inquiry">✕</button>
+      <h3 class="inquiry-title">START A PROJECT</h3>
+      <p class="inquiry-sub">Tell me about your timeline, vision, and footage.</p>
+
+      <form id="inquiryForm">
+        <div class="inquiry-form-group">
+          <label class="inquiry-label" for="inqName">Your Name / Company</label>
+          <input type="text" id="inqName" class="inquiry-input" placeholder="e.g. Maya Chen / Studio Monolith" required>
+        </div>
+
+        <div class="inquiry-form-group">
+          <label class="inquiry-label" for="inqType">Project Category</label>
+          <select id="inqType" class="inquiry-select">
+            <option value="Commercial / Brand Trailer">Commercial / Brand Trailer</option>
+            <option value="Short-Form Social Campaign">Short-Form Social Campaign (Reels / Shorts)</option>
+            <option value="Long-Form Documentary / YouTube">Long-Form Documentary / YouTube</option>
+            <option value="Motion Design & Title Sequences">Motion Design & Title Sequences</option>
+            <option value="Full Post-Production (Edit + Color + Sound)">Full Post-Production (Edit + Color + Sound)</option>
+          </select>
+        </div>
+
+        <div class="inquiry-form-group">
+          <label class="inquiry-label" for="inqBudget">Estimated Budget Range</label>
+          <select id="inqBudget" class="inquiry-select">
+            <option value="$2,500 – $5,000">$2,500 – $5,000</option>
+            <option value="$5,000 – $10,000">$5,000 – $10,000</option>
+            <option value="$10,000+">$10,000+</option>
+            <option value="Retainer / Ongoing">Monthly Retainer</option>
+          </select>
+        </div>
+
+        <div class="inquiry-form-group">
+          <label class="inquiry-label" for="inqDetails">Project Scope &amp; Target Deadline</label>
+          <textarea id="inqDetails" class="inquiry-textarea" placeholder="Briefly describe footage volume, raw camera format, and key objectives..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; padding: 16px;">
+          SEND INQUIRY VIA EMAIL →
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/cinema-canvas.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

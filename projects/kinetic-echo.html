@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KINETIC ECHO // APEX — Case Study — ARNAV KUMAR</title>
+  <meta name="description" content="Editorial case study: High-velocity automotive commercial launch film and sound design by Arnav Kumar.">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23111111'/><path d='M10 8h3v16h-3zM15 16l8-8v16l-8-8z' fill='%23F7F7F5'/></svg>">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-brand" aria-label="Home">
+          <span class="brand-name">ARNAV KUMAR</span>
+          
+        </a>
+
+        <nav class="nav-menu" aria-label="Case Study Navigation">
+          <a href="../index.html#work" class="nav-link active">Work</a>
+          <a href="../index.html#services" class="nav-link">Services</a>
+          <a href="../index.html#about" class="nav-link">About</a>
+          <a href="../index.html#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <a href="../index.html#work" class="btn-secondary" style="padding: 6px 12px; font-size: 0.75rem;">
+          ← BACK TO WORK
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Case Study Hero Header -->
+    <section class="case-study-hero">
+      <div class="container">
+        <a href="../index.html#work" class="case-back-link">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M9.5 6H2.5M6 2.5L2.5 6 6 9.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          SELECTED WORK / 02
+        </a>
+
+        <div class="case-header-meta">
+          <span class="label-caps">BRAND / COMMERCIAL</span>
+          <span class="mono-tag">// AUTOMOTIVE LAUNCH FILM</span>
+        </div>
+
+        <h1 class="case-title">KINETIC ECHO // APEX</h1>
+
+        <p class="case-intro-text">
+          A visceral commercial cut fusing hyper-precise speed ramps, asphalt match cuts, and industrial sub-bass sound design for an all-electric supercar premiere.
+        </p>
+
+        <!-- Spec Bar -->
+        <div class="case-spec-bar">
+          <div class="spec-item">
+            <span class="spec-label">CLIENT</span>
+            <span class="spec-value">Apex Dynamics Motors</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">RUNTIME</span>
+            <span class="spec-value">62 Seconds</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">DELIVERABLES</span>
+            <span class="spec-value">Cinema 2.39:1 DCP, Broadcast 16:9, Social 9:16</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">YEAR</span>
+            <span class="spec-value">2025</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full-Width Video Player -->
+    <section class="case-media-hero">
+      <div class="container">
+        <div class="case-video-container" id="casePlayerContainer">
+          <canvas id="caseCanvas" data-poster="../assets/project_kinetic_echo.jpg"></canvas>
+
+          <div class="case-video-overlay-ui">
+            <div class="case-video-top">
+              <span class="mono-tag" style="color: var(--white);">APEX_LAUNCH_CINEMA_2.39.MOV</span>
+              <span class="mono-tag" style="color: var(--white);">PRORES 4444 XQ // 24.000 FPS</span>
+            </div>
+
+            <button class="case-video-center-btn" aria-label="Play or Pause Video">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="6,3 20,12 6,21"></polygon>
+              </svg>
+            </button>
+
+            <div class="case-video-bottom">
+              <div class="case-progress-bar" id="caseProgressBar">
+                <div class="case-progress-fill" id="caseProgressFill"></div>
+              </div>
+
+              <div class="case-video-controls-row">
+                <div class="case-controls-left">
+                  <button id="casePlayToggle" class="btn-primary" style="padding: 4px 12px; font-size: 0.6875rem;">PLAY</button>
+                  <span id="caseTimecode" class="mono-tag" style="color: var(--white);">00:00:00:00</span>
+                </div>
+                <div class="case-controls-right">
+                  <button id="caseAnamorphicToggle" class="mono-tag" style="color: var(--white); background: rgba(255,255,255,0.15); padding: 4px 8px; border-radius: 3px;">2.39:1 CROP</button>
+                  <button id="caseFullscreenToggle" class="mono-tag" style="color: var(--white); background: rgba(255,255,255,0.15); padding: 4px 8px; border-radius: 3px;">FULLSCREEN</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview: The Project, My Role, The Approach -->
+    <section class="container">
+      <div class="case-overview-grid">
+
+        <aside class="case-sidebar">
+          <div class="case-sidebar-block">
+            <h2 class="sidebar-heading">THE PROJECT</h2>
+            <p style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6;">
+              Apex Motors needed an electrifying launch film for their flagship grand tourer. Unlike combustion engines that roar with exhaust acoustics, electric vehicles present a distinct sound challenge: they are silent. The goal was to build acoustic gravitas through synthesized power, torque curves, and optical rhythm.
+            </p>
+          </div>
+
+          <div class="case-sidebar-block">
+            <h2 class="sidebar-heading">MY ROLE</h2>
+            <div class="role-tag-list">
+              <span class="role-tag">Commercial Video Editing</span>
+              <span class="role-tag">Speed Ramping &amp; Match Cuts</span>
+              <span class="role-tag">Sound Design &amp; Foley</span>
+              <span class="role-tag">Night Anamorphic Color Grade</span>
+            </div>
+          </div>
+        </aside>
+
+        <div class="case-main-narrative">
+          <div>
+            <span class="label-caps">CREATIVE DIRECTION</span>
+            <h2 class="narrative-title">THE APPROACH</h2>
+          </div>
+
+          <p class="narrative-p">
+            <strong>Velocity measured in micro-moments.</strong> Traditional car commercials rely on wide track shots with drone pans. We chose macro proximity: the tire groove slicing through rainwater at 120 FPS, the instantaneous iris dilation of the driver, and reflections of Tokyo neon racing across carbon fiber bodywork.
+          </p>
+
+          <p class="narrative-p">
+            We implemented a <em>whip-velocity match-cut system</em>: entering a frame at 600% speed, decelerating to a 100% dead-stop on a single bead of moisture, and detonating into a 240 FPS slow-motion corner drift on the exact downbeat of a sub-bass kick.
+          </p>
+
+          <p class="narrative-p">
+            The color palette was anchored in nocturnal cyan-teal reflections balanced against tungsten streetlights and rich specular highlights on the matte obsidian finish.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Before / After Slider -->
+    <section class="container">
+      <div class="comparison-section">
+        <div class="comparison-header">
+          <div>
+            <span class="label-caps">POST-PRODUCTION BREAKDOWN</span>
+            <h3 class="section-heading" style="font-size: 1.75rem;">NIGHT LOG TO ANAMORPHIC MASTER</h3>
+          </div>
+          <span class="mono-tag">DRAG SLIDER TO REVEAL SPECULAR ROLL-OFF</span>
+        </div>
+
+        <div class="comparison-wrapper" id="beforeAfterSlider">
+          <div class="comparison-layer comparison-layer-after">
+            <img src="../assets/project_kinetic_echo.jpg" alt="Final Graded Automotive Frame">
+            <span class="comparison-badge badge-graded">FINAL GRADE // ANAMORPHIC BLUE FLARE</span>
+          </div>
+
+          <div class="comparison-layer comparison-layer-before">
+            <img src="../assets/log_raw_footage.jpg" alt="Raw Flat Log Camera Frame">
+            <span class="comparison-badge badge-raw">RAW LOG // S-LOG3 NEUTRAL</span>
+          </div>
+
+          <div class="comparison-handle" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M6 4.5L1.5 9 6 13.5M12 4.5l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Motion Graphics & Kinetic System -->
+    <section class="container">
+      <div class="motion-breakdown-section">
+        <span class="label-caps">KINETIC CHOREOGRAPHY</span>
+        <h3 class="section-heading" style="font-size: 1.75rem;">SPEED-RAMPING &amp; TYPOGRAPHY</h3>
+        <p class="section-subheading">Syncing hyper-accelerated frame rates with dynamic telemetry graphics.</p>
+
+        <div class="motion-grid">
+          <div class="motion-card">
+            <span class="motion-card-badge">SYSTEM 01 // SPEED RAMP</span>
+            <h4 class="motion-card-title">Asymmetric Bézier Curves</h4>
+            <p class="motion-card-desc">
+              Velocity curves in DaVinci Resolve Studio utilizing 600% entry ramps flattening to 24 FPS on the apex of turns.
+            </p>
+            <div class="motion-code-preview">
+              CURVE_TYPE: Asymmetric S-Curve<br>
+              PEAK_RAMP: 600% / 0.18s<br>
+              SETTLE_SPEED: 100% / 24 FPS
+            </div>
+          </div>
+
+          <div class="motion-card">
+            <span class="motion-card-badge">SYSTEM 02 // TELEMETRY HUD</span>
+            <h4 class="motion-card-title">Vector Torque Overlays</h4>
+            <p class="motion-card-desc">
+              Custom vector tachometer and G-force vectors overlaid with anamorphic lens distortion matching Cooke Anamorphic glass.
+            </p>
+            <div class="motion-code-preview">
+              LENS_PROFILE: Cooke /i Anamorphic 2x<br>
+              OPTICAL_DISTORTION: +0.08 Barrel<br>
+              TRACKER: 3D Camera Solver
+            </div>
+          </div>
+
+          <div class="motion-card">
+            <span class="motion-card-badge">SYSTEM 03 // TYPOGRAPHY</span>
+            <h4 class="motion-card-title">Technical Title Treatment</h4>
+            <p class="motion-card-desc">
+              Wide-tracked monospaced typography with subtle scanline flicker and micro-glitch reveals on scene transitions.
+            </p>
+            <div class="motion-code-preview">
+              FONT: JetBrains Mono / Geist<br>
+              TRACKING: +220 EM<br>
+              TRANSITION: 4-frame displacement
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Color Palette Breakdown -->
+    <section class="container">
+      <div class="color-breakdown-section">
+        <span class="label-caps">COLOR SCIENCE</span>
+        <h3 class="section-heading" style="font-size: 1.75rem;">NOCTURNAL CYAN &amp; AMBER HIGHLIGHTS</h3>
+        <p class="section-subheading">Balancing wet black bitumen, cool Tokyo cyan reflections, and incandescent streetlamps.</p>
+
+        <div class="color-palette-bar">
+          <div class="palette-swatch" style="background-color: #080D12; color: #FFFFFF;">#080D12</div>
+          <div class="palette-swatch" style="background-color: #0E2A3A; color: #FFFFFF;">#0E2A3A</div>
+          <div class="palette-swatch" style="background-color: #1A5982; color: #FFFFFF;">#1A5982</div>
+          <div class="palette-swatch" style="background-color: #D47B2E; color: #FFFFFF;">#D47B2E</div>
+          <div class="palette-swatch" style="background-color: #E8F3FA; color: #111111;">#E8F3FA</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sound Design Stem Breakdown -->
+    <section class="container">
+      <div class="sound-design-section">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <span class="label-caps">ACOUSTIC ENGINEERING</span>
+            <h3 class="section-heading" style="font-size: 1.75rem;">ELECTRIC TORQUE SOUND DESIGN</h3>
+            <p class="section-subheading">Designing an acoustic identity for zero-emission acceleration.</p>
+          </div>
+          <span class="mono-tag">SUB-BASS RANGE: 28Hz – 60Hz</span>
+        </div>
+
+        <div class="sound-stem-rack">
+          <div class="stem-track">
+            <div class="stem-info">
+              <span class="stem-name">01 // EV MOTOR WHINE</span>
+              <span class="stem-spec">Modular Synth Sine Sweep + Harmonic Overtones</span>
+            </div>
+            <div class="stem-waveform-container"></div>
+            <div class="stem-controls">
+              <button class="stem-btn" data-action="mute">MUTE</button>
+              <button class="stem-btn" data-action="solo">SOLO</button>
+            </div>
+          </div>
+
+          <div class="stem-track">
+            <div class="stem-info">
+              <span class="stem-name">02 // WET ASPHALT FOLEY</span>
+              <span class="stem-spec">Contact Mic Hydroplaning + Michelin Cup 2 Friction</span>
+            </div>
+            <div class="stem-waveform-container"></div>
+            <div class="stem-controls">
+              <button class="stem-btn" data-action="mute">MUTE</button>
+              <button class="stem-btn" data-action="solo">SOLO</button>
+            </div>
+          </div>
+
+          <div class="stem-track">
+            <div class="stem-info">
+              <span class="stem-name">03 // SUB IMPACT DROPS</span>
+              <span class="stem-spec">808 Sub-Drop tuned to 32Hz on each gearless pull</span>
+            </div>
+            <div class="stem-waveform-container"></div>
+            <div class="stem-controls">
+              <button class="stem-btn" data-action="mute">MUTE</button>
+              <button class="stem-btn" data-action="solo">SOLO</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Next Project Banner -->
+    <section class="next-project-section">
+      <div class="container">
+        <a href="craftsmans-silence.html" class="next-project-link">
+          <div>
+            <p class="next-project-label">NEXT PROJECT / 03</p>
+            <h2 class="next-project-title">
+              THE CRAFTSMAN'S SILENCE
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </h2>
+            <p style="font-size: 0.9375rem; color: var(--text-secondary); margin-top: 10px;">
+              Intimate 18-minute portrait of an artisanal watchmaker in Kyoto.
+            </p>
+          </div>
+          <div class="next-project-thumbnail">
+            <img src="../assets/project_craftsman.jpg" alt="Craftsman's Silence Project Thumbnail">
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">ARNAV KUMAR</span>
+        <span class="footer-copyright">&copy; 2026 ARNAV KUMAR. ALL RIGHTS RESERVED.</span>
+        <a href="../index.html#contact" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dark);">START A PROJECT →</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/cinema-canvas.js"></script>
+  <script src="../js/case-study.js"></script>
+</body>
+</html>

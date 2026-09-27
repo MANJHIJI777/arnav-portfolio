@@ -1,0 +1,21 @@
+{
+  "name": "arnav-kumar-portfolio",
+  "version": "1.0.0",
+  "description": "Premium Editorial Portfolio for Video Editor",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "ruby server.rb",
+    "start": "ruby server.rb",
+    "serve": "ruby server.rb"
+  },
+  "keywords": [
+    "portfolio",
+    "video-editor",
+    "editorial",
+    "cinema"
+  ],
+  "author": "Arnav Kumar",
+  "license": "ISC"
+}

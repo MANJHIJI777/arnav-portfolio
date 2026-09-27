@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE CRAFTSMAN'S SILENCE — Case Study — ARNAV KUMAR</title>
+  <meta name="description" content="Editorial case study: Long-form narrative documentary edit and acoustic foley design by Arnav Kumar.">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23111111'/><path d='M10 8h3v16h-3zM15 16l8-8v16l-8-8z' fill='%23F7F7F5'/></svg>">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+
+  <header class="site-nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-brand" aria-label="Home">
+          <span class="brand-name">ARNAV KUMAR</span>
+          
+        </a>
+
+        <nav class="nav-menu" aria-label="Case Study Navigation">
+          <a href="../index.html#work" class="nav-link active">Work</a>
+          <a href="../index.html#services" class="nav-link">Services</a>
+          <a href="../index.html#about" class="nav-link">About</a>
+          <a href="../index.html#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <a href="../index.html#work" class="btn-secondary" style="padding: 6px 12px; font-size: 0.75rem;">
+          ← BACK TO WORK
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Case Study Hero Header -->
+    <section class="case-study-hero">
+      <div class="container">
+        <a href="../index.html#work" class="case-back-link">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M9.5 6H2.5M6 2.5L2.5 6 6 9.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          SELECTED WORK / 03
+        </a>
+
+        <div class="case-header-meta">
+          <span class="label-caps">CREATOR / DOCUMENTARY</span>
+          <span class="mono-tag">// LONG-FORM NARRATIVE CUT</span>
+        </div>
+
+        <h1 class="case-title">THE CRAFTSMAN'S SILENCE</h1>
+
+        <p class="case-intro-text">
+          An 18-minute contemplation on mastery, dedication, and aging in Kyoto. Pacing dictated by breath, tweezers placing balance springs, and wood creaks in a 90-year-old workshop.
+        </p>
+
+        <!-- Spec Bar -->
+        <div class="case-spec-bar">
+          <div class="spec-item">
+            <span class="spec-label">CLIENT</span>
+            <span class="spec-value">Hajime Horology Guild</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">RUNTIME</span>
+            <span class="spec-value">18m 24s</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">DELIVERABLES</span>
+            <span class="spec-value">4K HDR Master, Film Festival Screener</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">YEAR</span>
+            <span class="spec-value">2024</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full-Width Video Player -->
+    <section class="case-media-hero">
+      <div class="container">
+        <div class="case-video-container" id="casePlayerContainer">
+          <canvas id="caseCanvas" data-poster="../assets/project_craftsman.jpg"></canvas>
+
+          <div class="case-video-overlay-ui">
+            <div class="case-video-top">
+              <span class="mono-tag" style="color: var(--white);">CRAFTSMAN_SILENCE_4K_DCI.MOV</span>
+              <span class="mono-tag" style="color: var(--white);">DCI 4K FLAT // 24.000 FPS</span>
+            </div>
+
+            <button class="case-video-center-btn" aria-label="Play or Pause Video">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="6,3 20,12 6,21"></polygon>
+              </svg>
+            </button>
+
+            <div class="case-video-bottom">
+              <div class="case-progress-bar" id="caseProgressBar">
+                <div class="case-progress-fill" id="caseProgressFill"></div>
+              </div>
+
+              <div class="case-video-controls-row">
+                <div class="case-controls-left">
+                  <button id="casePlayToggle" class="btn-primary" style="padding: 4px 12px; font-size: 0.6875rem;">PLAY</button>
+                  <span id="caseTimecode" class="mono-tag" style="color: var(--white);">00:00:00:00</span>
+                </div>
+                <div class="case-controls-right">
+                  <button id="caseAnamorphicToggle" class="mono-tag" style="color: var(--white); background: rgba(255,255,255,0.15); padding: 4px 8px; border-radius: 3px;">2.39:1 CROP</button>
+                  <button id="caseFullscreenToggle" class="mono-tag" style="color: var(--white); background: rgba(255,255,255,0.15); padding: 4px 8px; border-radius: 3px;">FULLSCREEN</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview: The Project, My Role, The Approach -->
+    <section class="container">
+      <div class="case-overview-grid">
+
+        <aside class="case-sidebar">
+          <div class="case-sidebar-block">
+            <h2 class="sidebar-heading">THE PROJECT</h2>
+            <p style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6;">
+              Documentary director Eliza Reed spent three weeks filming Master Horologist Kenzo Mori in Kyoto. The challenge was avoiding conventional talking-head documentary tropes, allowing the audience to physically experience the meditative concentration required to hand-finish watch gears invisible to the naked eye.
+            </p>
+          </div>
+
+          <div class="case-sidebar-block">
+            <h2 class="sidebar-heading">MY ROLE</h2>
+            <div class="role-tag-list">
+              <span class="role-tag">Long-Form Story Editing</span>
+              <span class="role-tag">Foley Reconstruction</span>
+              <span class="role-tag">Naturalistic Color Timing</span>
+              <span class="role-tag">Subtitles &amp; Typographic Pacing</span>
+            </div>
+          </div>
+        </aside>
+
+        <div class="case-main-narrative">
+          <div>
+            <span class="label-caps">CREATIVE DIRECTION</span>
+            <h2 class="narrative-title">THE APPROACH</h2>
+          </div>
+
+          <p class="narrative-p">
+            <strong>Editing by the rhythm of breath.</strong> While commercial editing thrives on rapid information delivery, long-form documentary requires bravery in stillness. I timed cuts precisely to Mori-san's exhalations: he would hold his breath for twelve seconds before seating an escapement jewel. The cut never interrupted that tension; the camera stayed locked until the release of breath.
+          </p>
+
+          <p class="narrative-p">
+            Every audio track was rebuilt from the ground up: the tiny ping of steel tweezers against brass plates, the whisper of diamond paste on boxwood laps, and the acoustic resonance of tatami mats under morning rain.
+          </p>
+
+          <p class="narrative-p">
+            The film received official selection at Tokyo Documentary Film Festival 2024 and achieved a 72% full completion rate on YouTube's long-form creator showcase.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Color & Texture Breakdown -->
+    <section class="container">
+      <div class="color-breakdown-section">
+        <span class="label-caps">COLOR SCIENCE</span>
+        <h3 class="section-heading" style="font-size: 1.75rem;">KODAK 500T TUNGSTEN &amp; WOOD GRAIN</h3>
+        <p class="section-subheading">Warm, tactile film emulation honoring the warm patina of cedar workbenches.</p>
+
+        <div class="color-palette-bar">
+          <div class="palette-swatch" style="background-color: #24160E; color: #FFFFFF;">#24160E</div>
+          <div class="palette-swatch" style="background-color: #5C3A21; color: #FFFFFF;">#5C3A21</div>
+          <div class="palette-swatch" style="background-color: #A36B3D; color: #FFFFFF;">#A36B3D</div>
+          <div class="palette-swatch" style="background-color: #E2AF68; color: #111111;">#E2AF68</div>
+          <div class="palette-swatch" style="background-color: #26384C; color: #FFFFFF;">#26384C</div>
+        </div>
+
+        <div class="color-details-grid">
+          <div class="color-detail-box">
+            <span class="color-detail-label">LIGHT SOURCE</span>
+            <span class="color-detail-value">2700K Incandescent Lamp</span>
+            <p class="color-detail-desc">Preserving the intimate warmth of the single desk lamp while maintaining soft neutral daylight from the shoji window.</p>
+          </div>
+          <div class="color-detail-box">
+            <span class="color-detail-label">SKIN TEXTURE</span>
+            <span class="color-detail-value">Zero Spatial Noise Reduction</span>
+            <p class="color-detail-desc">Leaving eighty years of weathered facial detail untouched without harsh digital artificial sharpness.</p>
+          </div>
+          <div class="color-detail-box">
+            <span class="color-detail-label">SUBTITLE TIMING</span>
+            <span class="color-detail-value">Offset Entry for Reading Ease</span>
+            <p class="color-detail-desc">Subtitles appear 6 frames after dialogue begins, preventing visual competition with micro-movements on screen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before / After Slider -->
+    <section class="container">
+      <div class="comparison-section">
+        <div class="comparison-header">
+          <div>
+            <span class="label-caps">POST-PRODUCTION BREAKDOWN</span>
+            <h3 class="section-heading" style="font-size: 1.75rem;">NATURAL DOCUMENTARY GRADE</h3>
+          </div>
+          <span class="mono-tag">DRAG SLIDER TO REVEAL TACTILE WOOD TONES</span>
+        </div>
+
+        <div class="comparison-wrapper" id="beforeAfterSlider">
+          <div class="comparison-layer comparison-layer-after">
+            <img src="../assets/project_craftsman.jpg" alt="Final Naturalistic Graded Frame">
+            <span class="comparison-badge badge-graded">FINAL GRADE // KODAK 500T 2700K</span>
+          </div>
+
+          <div class="comparison-layer comparison-layer-before">
+            <img src="../assets/log_raw_footage.jpg" alt="Flat Cinema Camera Raw Frame">
+            <span class="comparison-badge badge-raw">RAW CAMERA LOG // NEUTRAL</span>
+          </div>
+
+          <div class="comparison-handle" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M6 4.5L1.5 9 6 13.5M12 4.5l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sound Design Stem Breakdown -->
+    <section class="container">
+      <div class="sound-design-section">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <span class="label-caps">ACOUSTIC FOLEY DESIGN</span>
+            <h3 class="section-heading" style="font-size: 1.75rem;">WORKSHOP FOLEY STEM BREAKDOWN</h3>
+            <p class="section-subheading">Sound recorded with binaural shotgun microphones to preserve intimate tactile presence.</p>
+          </div>
+          <span class="mono-tag">ROOM NOISE FLOOR: -48 dBFS</span>
+        </div>
+
+        <div class="sound-stem-rack">
+          <div class="stem-track">
+            <div class="stem-info">
+              <span class="stem-name">01 // TWEEZERS &amp; GEARS</span>
+              <span class="stem-spec">Hardened Steel on Brass Escapement Click</span>
+            </div>
+            <div class="stem-waveform-container"></div>
+            <div class="stem-controls">
+              <button class="stem-btn" data-action="mute">MUTE</button>
+              <button class="stem-btn" data-action="solo">SOLO</button>
+            </div>
+          </div>
+
+          <div class="stem-track">
+            <div class="stem-info">
+              <span class="stem-name">02 // KYOTO RAIN &amp; SHÔJI</span>
+              <span class="stem-spec">Bamboo Gutter Drops + Soft Gutter Resonance</span>
+            </div>
+            <div class="stem-waveform-container"></div>
+            <div class="stem-controls">
+              <button class="stem-btn" data-action="mute">MUTE</button>
+              <button class="stem-btn" data-action="solo">SOLO</button>
+            </div>
+          </div>
+
+          <div class="stem-track">
+            <div class="stem-info">
+              <span class="stem-name">03 // CRAFTSMAN BREATH</span>
+              <span class="stem-spec">Diaphragm Tension Hold &amp; Release (Sennheiser MKH 416)</span>
+            </div>
+            <div class="stem-waveform-container"></div>
+            <div class="stem-controls">
+              <button class="stem-btn" data-action="mute">MUTE</button>
+              <button class="stem-btn" data-action="solo">SOLO</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Next Project Banner -->
+    <section class="next-project-section">
+      <div class="container">
+        <a href="synapse-os.html" class="next-project-link">
+          <div>
+            <p class="next-project-label">NEXT PROJECT / 04</p>
+            <h2 class="next-project-title">
+              SYNAPSE OS // SPATIAL
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </h2>
+            <p style="font-size: 0.9375rem; color: var(--text-secondary); margin-top: 10px;">
+              Minimalist product film illustrating spatial operating system gestures with clean typography.
+            </p>
+          </div>
+          <div class="next-project-thumbnail">
+            <img src="../assets/project_synapse.jpg" alt="Synapse OS Project Thumbnail">
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">ARNAV KUMAR</span>
+        <span class="footer-copyright">&copy; 2026 ARNAV KUMAR. ALL RIGHTS RESERVED.</span>
+        <a href="../index.html#contact" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dark);">START A PROJECT →</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/cinema-canvas.js"></script>
+  <script src="../js/case-study.js"></script>
+</body>
+</html>

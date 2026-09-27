@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I75 CPA REVIEW — Case Study — ARNAV KUMAR</title>
+  <meta name="description" content="Editorial case study: High-retention commercial trailer and motion design system for I75 CPA Review by Arnav Kumar.">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23111111'/><path d='M10 8h3v16h-3zM15 16l8-8v16l-8-8z' fill='%23F7F7F5'/></svg>">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-brand" aria-label="Home">
+          <span class="brand-name">ARNAV KUMAR</span>
+          
+        </a>
+
+        <nav class="nav-menu" aria-label="Case Study Navigation">
+          <a href="../index.html#work" class="nav-link active">Work</a>
+          <a href="../index.html#services" class="nav-link">Services</a>
+          <a href="../index.html#about" class="nav-link">About</a>
+          <a href="../index.html#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <a href="../index.html#work" class="btn-secondary" style="padding: 6px 12px; font-size: 0.75rem;">
+          ← BACK TO WORK
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         CASE STUDY HERO HEADER
+         ====================================================================== -->
+    <section class="case-study-hero">
+      <div class="container">
+        <a href="../index.html#work" class="case-back-link">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M9.5 6H2.5M6 2.5L2.5 6 6 9.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          SELECTED WORK / 01
+        </a>
+
+        <div class="case-header-meta">
+          <span class="label-caps">BRAND / EDUCATION</span>
+          <span class="mono-tag">// COMMERCIAL TRAILER</span>
+        </div>
+
+        <h1 class="case-title">I75 CPA REVIEW</h1>
+
+        <p class="case-intro-text">
+          Distilling dense financial certification curricula into a high-stakes, cinematic trailer engineered to arrest attention and convert cynical accounting candidates.
+        </p>
+
+        <!-- Spec Bar -->
+        <div class="case-spec-bar">
+          <div class="spec-item">
+            <span class="spec-label">CLIENT</span>
+            <span class="spec-value">I75 Learning Corp.</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">RUNTIME</span>
+            <span class="spec-value">98 Seconds</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">DELIVERABLES</span>
+            <span class="spec-value">16:9 4K Master, 9:16 Social Cutdowns</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">YEAR</span>
+            <span class="spec-value">2025</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         FULL-WIDTH VIDEO PLAYER
+         ====================================================================== -->
+    <section class="case-media-hero">
+      <div class="container">
+        <div class="case-video-container" id="casePlayerContainer">
+          <canvas id="caseCanvas" data-poster="../assets/project_cpa_review.jpg"></canvas>
+
+          <div class="case-video-overlay-ui">
+            <!-- Top Controls -->
+            <div class="case-video-top">
+              <span class="mono-tag" style="color: var(--white);">I75_COMMERCIAL_FINAL_4K.MOV</span>
+              <span class="mono-tag" style="color: var(--white);">PRORES 4444 // 24.000 FPS</span>
+            </div>
+
+            <!-- Big Center Button -->
+            <button class="case-video-center-btn" aria-label="Play or Pause Video">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="6,3 20,12 6,21"></polygon>
+              </svg>
+            </button>
+
+            <!-- Bottom Scrub Bar & Buttons -->
+            <div class="case-video-bottom">
+              <div class="case-progress-bar" id="caseProgressBar">
+                <div class="case-progress-fill" id="caseProgressFill"></div>
+              </div>
+
+              <div class="case-video-controls-row">
+                <div class="case-controls-left">
+                  <button id="casePlayToggle" class="btn-primary" style="padding: 4px 12px; font-size: 0.6875rem;">PLAY</button>
+                  <span id="caseTimecode" class="mono-tag" style="color: var(--white);">00:00:00:00</span>
+                </div>
+                <div class="case-controls-right">
+                  <button id="caseAnamorphicToggle" class="mono-tag" style="color: var(--white); background: rgba(255,255,255,0.15); padding: 4px 8px; border-radius: 3px;">2.39:1 CROP</button>
+                  <button id="caseFullscreenToggle" class="mono-tag" style="color: var(--white); background: rgba(255,255,255,0.15); padding: 4px 8px; border-radius: 3px;">FULLSCREEN</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         THE PROJECT, MY ROLE, THE APPROACH
+         ====================================================================== -->
+    <section class="container">
+      <div class="case-overview-grid">
+
+        <!-- Sidebar: The Project & My Role -->
+        <aside class="case-sidebar">
+          <div class="case-sidebar-block">
+            <h2 class="sidebar-heading">THE PROJECT</h2>
+            <p style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6;">
+              I75 CPA Review is a specialized test preparation platform. Most educational videos in this sector are dry, slide-heavy, and uninspiring. The mandate was to treat the CPA exam not as corporate compliance, but as a grueling, cinematic gauntlet—reframing the candidate's journey from anxiety into mastery.
+            </p>
+          </div>
+
+          <div class="case-sidebar-block">
+            <h2 class="sidebar-heading">MY ROLE</h2>
+            <div class="role-tag-list">
+              <span class="role-tag">Video Editing</span>
+              <span class="role-tag">Motion Graphics</span>
+              <span class="role-tag">Sound Design</span>
+              <span class="role-tag">Color Grading</span>
+              <span class="role-tag">Storytelling</span>
+            </div>
+          </div>
+
+          <div class="case-sidebar-block">
+            <h2 class="sidebar-heading">METRICS ACHIEVED</h2>
+            <p style="font-size: 0.9375rem; color: var(--text-primary); font-weight: 500;">
+              84.2% average watch duration on YouTube Pre-roll; 3.2× conversion spike on the course enrollment landing page.
+            </p>
+          </div>
+        </aside>
+
+        <!-- Main Narrative: The Approach -->
+        <div class="case-main-narrative">
+          <div>
+            <span class="label-caps">CREATIVE DIRECTION</span>
+            <h2 class="narrative-title">THE APPROACH</h2>
+          </div>
+
+          <p class="narrative-p">
+            <strong>Pacing dictated by psychological tension.</strong> The cut begins in an agonizingly quiet rhythm: solitary keyclicks, muffled fluorescent room tone, and tight close-ups of an exhausted candidate facing a 4-hour countdown clock. By establishing silence first, every subsequent sound element hit with amplified force.
+          </p>
+
+          <p class="narrative-p">
+            At the 0:24 mark, the edit shifts violently from passive observation into kinetic acceleration. We accelerated the cut frequency from 3.2-second holds down to 8-frame rhythmic bursts, synchronizing financial ledger diagrams, glowing bar charts, and passing skyscrapers with rising sub-bass impacts.
+          </p>
+
+          <p class="narrative-p">
+            Rather than generic corporate voiceovers, the voice track was edited down to razor-sharp declarations. Every pause was scrubbed of hesitation. Motion graphics were restrained to architectural HUD overlays rather than flashy cartoons, ensuring the tone maintained absolute authority.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         1. BEFORE / AFTER (RAW FOOTAGE VS FINAL EDIT)
+         ====================================================================== -->
+    <section class="container">
+      <div class="comparison-section">
+        <div class="comparison-header">
+          <div>
+            <span class="label-caps">POST-PRODUCTION BREAKDOWN</span>
+            <h3 class="section-heading" style="font-size: 1.75rem;">RAW FOOTAGE VS FINAL GRADE</h3>
+          </div>
+          <span class="mono-tag">DRAG SLIDER OR USE ARROW KEYS TO COMPARE</span>
+        </div>
+
+        <div class="comparison-wrapper" id="beforeAfterSlider">
+          <!-- Graded / Final Layer (Underneath) -->
+          <div class="comparison-layer comparison-layer-after">
+            <img src="../assets/graded_final_cut.jpg" alt="Final Kodak Graded Frame">
+            <span class="comparison-badge badge-graded">FINAL GRADE // KODAK 2383 D55</span>
+          </div>
+
+          <!-- Raw / Flat Log Layer (Clipped on top) -->
+          <div class="comparison-layer comparison-layer-before">
+            <img src="../assets/log_raw_footage.jpg" alt="Raw Flat ARRI Log C Footage">
+            <span class="comparison-badge badge-raw">RAW FOOTAGE // ARRI LOG C (FLAT)</span>
+          </div>
+
+          <!-- Interactive Handle -->
+          <div class="comparison-handle" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M6 4.5L1.5 9 6 13.5M12 4.5l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+
+        <div class="comparison-footer-hint">
+          <span>LEFT: UNGRADED ARRI LOG C WITH NEUTRAL D56 WB</span>
+          <span>RIGHT: CUSTOM DAVINCI YRGB CURVE WITH SPLIT-TONED SHADOWS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         2. MOTION GRAPHICS & KINETIC SYSTEM
+         ====================================================================== -->
+    <section class="container">
+      <div class="motion-breakdown-section">
+        <span class="label-caps">FRAMEWORK</span>
+        <h3 class="section-heading" style="font-size: 1.75rem;">MOTION GRAPHICS &amp; KINETIC SYSTEMS</h3>
+        <p class="section-subheading">Designing graphical elements that clarify dense data without distracting from narrative momentum.</p>
+
+        <div class="motion-grid">
+          <div class="motion-card">
+            <span class="motion-card-badge">MODULE 01 // DATA HUD</span>
+            <h4 class="motion-card-title">Exam Blueprint Ticker</h4>
+            <p class="motion-card-desc">
+              Custom kinetic tickers displaying passing statistics (75% pass mark threshold) designed with strict monospaced geometry and zero bounce easing.
+            </p>
+            <div class="motion-code-preview">
+              EASING: cubic-bezier(0.19, 1, 0.22, 1)<br>
+              FRAME_RATE: 24.000 FPS<br>
+              BLUR_SAMPLES: 16 (0.50 Shutter)
+            </div>
+          </div>
+
+          <div class="motion-card">
+            <span class="motion-card-badge">MODULE 02 // SCREEN REPLACEMENTS</span>
+            <h4 class="motion-card-title">Perspective Match Move</h4>
+            <p class="motion-card-desc">
+              Corner-pinned high-contrast UI screens tracking across 4K handheld camera movements using Mocha Pro planar tracking with accurate glass reflections.
+            </p>
+            <div class="motion-code-preview">
+              TRACKER: Mocha Pro Planar<br>
+              SURFACE: Anti-glare Matte Screen<br>
+              OCCLUSION_MASK: Clean Roto
+            </div>
+          </div>
+
+          <div class="motion-card">
+            <span class="motion-card-badge">MODULE 03 // LOWER THIRDS</span>
+            <h4 class="motion-card-title">Editorial Identity Cards</h4>
+            <p class="motion-card-desc">
+              Understated 1-line typographic lower thirds that reveal along a hairline clipping mask in 18 frames, respecting screen safe zones.
+            </p>
+            <div class="motion-code-preview">
+              TYPE: Geist Sans Medium (Track 120)<br>
+              MASK_DIR: Left-to-Right Wipe<br>
+              DURATION: 18f In / 24f Out
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. COLOR GRADING BREAKDOWN
+         ====================================================================== -->
+    <section class="container">
+      <div class="color-breakdown-section">
+        <span class="label-caps">COLOR SCIENCE</span>
+        <h3 class="section-heading" style="font-size: 1.75rem;">COLOR PALETTE &amp; GRADING PIPELINE</h3>
+        <p class="section-subheading">DaVinci Resolve Studio color workflow prioritizing natural skin tones against cool modernist corporate architecture.</p>
+
+        <!-- Palette Swatches -->
+        <div class="color-palette-bar">
+          <div class="palette-swatch" style="background-color: #121A21; color: #FFFFFF;">#121A21</div>
+          <div class="palette-swatch" style="background-color: #2D3E4E; color: #FFFFFF;">#2D3E4E</div>
+          <div class="palette-swatch" style="background-color: #7A8B99; color: #FFFFFF;">#7A8B99</div>
+          <div class="palette-swatch" style="background-color: #C89D7C; color: #111111;">#C89D7C</div>
+          <div class="palette-swatch" style="background-color: #F0ECE1; color: #111111;">#F0ECE1</div>
+        </div>
+
+        <div class="color-details-grid">
+          <div class="color-detail-box">
+            <span class="color-detail-label">NODE GRAPH</span>
+            <span class="color-detail-value">8-Node Parallel CST Workflow</span>
+            <p class="color-detail-desc">Input Color Space Transform to DaVinci Wide Gamut/Intermediate, isolated skin tone qualifier, and Kodak 2383 print emulation LUT.</p>
+          </div>
+          <div class="color-detail-box">
+            <span class="color-detail-label">HIGHLIGHT ROLL-OFF</span>
+            <span class="color-detail-value">Soft Shoulder Knee at 85 IRE</span>
+            <p class="color-detail-desc">Preventing digital clipping on office glass windows and fluorescent light panels, giving natural photographic roll-off.</p>
+          </div>
+          <div class="color-detail-box">
+            <span class="color-detail-label">FILM GRAIN</span>
+            <span class="color-detail-value">35mm 500T Scanned Texture</span>
+            <p class="color-detail-desc">Subtle organic grain blended at 22% in composite mode overlay, removing sterile digital sharpness.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. SOUND DESIGN MULTI-TRACK STEMS
+         ====================================================================== -->
+    <section class="container">
+      <div class="sound-design-section">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <span class="label-caps">AUDIO ARCHITECTURE</span>
+            <h3 class="section-heading" style="font-size: 1.75rem;">SOUND DESIGN STEM BREAKDOWN</h3>
+            <p class="section-subheading">Sound is 50% of the cinematic impact. Interact with individual stem tracks below.</p>
+          </div>
+          <span class="mono-tag">MASTER TARGET: -14.0 LUFS INTEGRATED</span>
+        </div>
+
+        <div class="sound-stem-rack">
+
+          <!-- Track 1: Dialogue -->
+          <div class="stem-track">
+            <div class="stem-info">
+              <span class="stem-name">01 // DIALOGUE &amp; VO</span>
+              <span class="stem-spec">iZotope Spectral De-noise + Neve Pre EQ</span>
+            </div>
+            <div class="stem-waveform-container"></div>
+            <div class="stem-controls">
+              <button class="stem-btn" data-action="mute">MUTE</button>
+              <button class="stem-btn" data-action="solo">SOLO</button>
+            </div>
+          </div>
+
+          <!-- Track 2: Foley & Impacts -->
+          <div class="stem-track">
+            <div class="stem-info">
+              <span class="stem-name">02 // FOLEY &amp; IMPACTS</span>
+              <span class="stem-spec">Mechanical Clock, Sub Drop 32Hz, Paper Rustle</span>
+            </div>
+            <div class="stem-waveform-container"></div>
+            <div class="stem-controls">
+              <button class="stem-btn" data-action="mute">MUTE</button>
+              <button class="stem-btn" data-action="solo">SOLO</button>
+            </div>
+          </div>
+
+          <!-- Track 3: Atmosphere -->
+          <div class="stem-track">
+            <div class="stem-info">
+              <span class="stem-name">03 // ATMOSPHERE &amp; AIR</span>
+              <span class="stem-spec">High-rise Office Wind, HVAC Drone, Reverb Tail</span>
+            </div>
+            <div class="stem-waveform-container"></div>
+            <div class="stem-controls">
+              <button class="stem-btn" data-action="mute">MUTE</button>
+              <button class="stem-btn" data-action="solo">SOLO</button>
+            </div>
+          </div>
+
+          <!-- Track 4: Cinematic Score -->
+          <div class="stem-track">
+            <div class="stem-info">
+              <span class="stem-name">04 // ORCHESTRAL SYNTH</span>
+              <span class="stem-spec">Prophet-6 Arpeggiator + Cello Pulses (128 BPM)</span>
+            </div>
+            <div class="stem-waveform-container"></div>
+            <div class="stem-controls">
+              <button class="stem-btn" data-action="mute">MUTE</button>
+              <button class="stem-btn" data-action="solo">SOLO</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         NEXT PROJECT BANNER
+         ====================================================================== -->
+    <section class="next-project-section">
+      <div class="container">
+        <a href="kinetic-echo.html" class="next-project-link">
+          <div>
+            <p class="next-project-label">NEXT PROJECT / 02</p>
+            <h2 class="next-project-title">
+              KINETIC ECHO // APEX
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </h2>
+            <p style="font-size: 0.9375rem; color: var(--text-secondary); margin-top: 10px;">
+              High-velocity electric automotive launch film synchronized to precision sound design.
+            </p>
+          </div>
+          <div class="next-project-thumbnail">
+            <img src="../assets/project_kinetic_echo.jpg" alt="Kinetic Echo Project Thumbnail">
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">ARNAV KUMAR</span>
+        <span class="footer-copyright">&copy; 2026 ARNAV KUMAR. ALL RIGHTS RESERVED.</span>
+        <a href="../index.html#contact" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dark);">START A PROJECT →</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/cinema-canvas.js"></script>
+  <script src="../js/case-study.js"></script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYNAPSE OS // SPATIAL — Case Study — ARNAV KUMAR</title>
+  <meta name="description" content="Editorial case study: UI motion design and 3D product launch teaser for spatial hardware by Arnav Kumar.">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23111111'/><path d='M10 8h3v16h-3zM15 16l8-8v16l-8-8z' fill='%23F7F7F5'/></svg>">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+
+  <header class="site-nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-brand" aria-label="Home">
+          <span class="brand-name">ARNAV KUMAR</span>
+          
+        </a>
+
+        <nav class="nav-menu" aria-label="Case Study Navigation">
+          <a href="../index.html#work" class="nav-link active">Work</a>
+          <a href="../index.html#services" class="nav-link">Services</a>
+          <a href="../index.html#about" class="nav-link">About</a>
+          <a href="../index.html#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <a href="../index.html#work" class="btn-secondary" style="padding: 6px 12px; font-size: 0.75rem;">
+          ← BACK TO WORK
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Case Study Hero Header -->
+    <section class="case-study-hero">
+      <div class="container">
+        <a href="../index.html#work" class="case-back-link">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M9.5 6H2.5M6 2.5L2.5 6 6 9.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          SELECTED WORK / 04
+        </a>
+
+        <div class="case-header-meta">
+          <span class="label-caps">PRODUCT / MOTION DESIGN</span>
+          <span class="mono-tag">// 3D TEASER &amp; SPATIAL UI</span>
+        </div>
+
+        <h1 class="case-title">SYNAPSE OS // SPATIAL</h1>
+
+        <p class="case-intro-text">
+          Choreographing spatial interface mechanics, holographic photon physics, and tactile haptic audio for a new class of spatial computing hardware.
+        </p>
+
+        <!-- Spec Bar -->
+        <div class="case-spec-bar">
+          <div class="spec-item">
+            <span class="spec-label">CLIENT</span>
+            <span class="spec-value">Axiom Systems / Unit-1</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">RUNTIME</span>
+            <span class="spec-value">74 Seconds</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">DELIVERABLES</span>
+            <span class="spec-value">4K Keynote Film, Interactive Web Embeds</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">YEAR</span>
+            <span class="spec-value">2024</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full-Width Video Player -->
+    <section class="case-media-hero">
+      <div class="container">
+        <div class="case-video-container" id="casePlayerContainer">
+          <canvas id="caseCanvas" data-poster="../assets/project_synapse.jpg"></canvas>
+
+          <div class="case-video-overlay-ui">
+            <div class="case-video-top">
+              <span class="mono-tag" style="color: var(--white);">SYNAPSE_OS_KEYNOTE_MASTER_4K.MOV</span>
+              <span class="mono-tag" style="color: var(--white);">60.000 FPS // HIGH BITRATE</span>
+            </div>
+
+            <button class="case-video-center-btn" aria-label="Play or Pause Video">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="6,3 20,12 6,21"></polygon>
+              </svg>
+            </button>
+
+            <div class="case-video-bottom">
+              <div class="case-progress-bar" id="caseProgressBar">
+                <div class="case-progress-fill" id="caseProgressFill"></div>
+              </div>
+
+              <div class="case-video-controls-row">
+                <div class="case-controls-left">
+                  <button id="casePlayToggle" class="btn-primary" style="padding: 4px 12px; font-size: 0.6875rem;">PLAY</button>
+                  <span id="caseTimecode" class="mono-tag" style="color: var(--white);">00:00:00:00</span>
+                </div>
+                <div class="case-controls-right">
+                  <button id="caseAnamorphicToggle" class="mono-tag" style="color: var(--white); background: rgba(255,255,255,0.15); padding: 4px 8px; border-radius: 3px;">2.39:1 CROP</button>
+                  <button id="caseFullscreenToggle" class="mono-tag" style="color: var(--white); background: rgba(255,255,255,0.15); padding: 4px 8px; border-radius: 3px;">FULLSCREEN</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview: The Project, My Role, The Approach -->
+    <section class="container">
+      <div class="case-overview-grid">
+
+        <aside class="case-sidebar">
+          <div class="case-sidebar-block">
+            <h2 class="sidebar-heading">THE PROJECT</h2>
+            <p style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6;">
+              Axiom Systems introduced Unit-1, a desktop neural hub with spatial projection. The film had to demonstrate how floating volumetric UI feels completely tangible, tactile, and mathematically grounded—avoiding cheesy sci-fi holograms in favor of industrial precision.
+            </p>
+          </div>
+
+          <div class="case-sidebar-block">
+            <h2 class="sidebar-heading">MY ROLE</h2>
+            <div class="role-tag-list">
+              <span class="role-tag">3D Motion Direction</span>
+              <span class="role-tag">UI Choreography</span>
+              <span class="role-tag">Haptic Sound Synthesis</span>
+              <span class="role-tag">Editorial Pacing</span>
+            </div>
+          </div>
+        </aside>
+
+        <div class="case-main-narrative">
+          <div>
+            <span class="label-caps">CREATIVE DIRECTION</span>
+            <h2 class="narrative-title">THE APPROACH</h2>
+          </div>
+
+          <p class="narrative-p">
+            <strong>Motion rooted in physical inertia.</strong> Floating digital UI often feels weightless and disconnected. We engineered a physics model where volumetric nodes possess mass, spring damping, and momentum. When a user turns the knurled dial, UI rays flex like tension cables before snapping to their grid coordinates.
+          </p>
+
+          <p class="narrative-p">
+            Every optical transition was designed with frame-level precision in After Effects and Cinema 4D. Wireframe nodes expand along exact isometric vectors, illuminated by laser-sharp light caustics across the anodized aluminum chassis.
+          </p>
+
+          <p class="narrative-p">
+            To make light feel tactile, each holographic interaction was paired with custom synthesized glass and stone clicks: high-frequency 4kHz transients with rapid 15ms decays that communicate instant physical response.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Motion & Typography Details -->
+    <section class="container">
+      <div class="motion-breakdown-section">
+        <span class="label-caps">SPATIAL MATHEMATICS</span>
+        <h3 class="section-heading" style="font-size: 1.75rem;">SPRING DYNAMICS &amp; VOLUMETRIC GRID</h3>
+        <p class="section-subheading">Designing a motion language for hardware and software in unison.</p>
+
+        <div class="motion-grid">
+          <div class="motion-card">
+            <span class="motion-card-badge">PHYSICS 01 // SPRING TENSION</span>
+            <h4 class="motion-card-title">Critically Damped Oscillations</h4>
+            <p class="motion-card-desc">
+              All UI element reveals use a custom spring constant (stiffness: 280, damping: 28) ensuring quick arrival without elastic rubber-banding.
+            </p>
+            <div class="motion-code-preview">
+              STIFFNESS: 280 N/m<br>
+              DAMPING: 28 Ns/m<br>
+              SETTLE_TIME: 160ms
+            </div>
+          </div>
+
+          <div class="motion-card">
+            <span class="motion-card-badge">PHYSICS 02 // VOLUMETRIC RAYS</span>
+            <h4 class="motion-card-title">Photon Refraction &amp; Glass</h4>
+            <p class="motion-card-desc">
+              Holographic wireframes project accurate specular falloff onto the anodized slate baseplate using Octane spectral lighting.
+            </p>
+            <div class="motion-code-preview">
+              RENDERER: Octane Spectral<br>
+              IOR: 1.52 (Optical Crown)<br>
+              PASSES: Diffuse + Direct Specular
+            </div>
+          </div>
+
+          <div class="motion-card">
+            <span class="motion-card-badge">PHYSICS 03 // SOUND SYNTHESIS</span>
+            <h4 class="motion-card-title">Ceramic Haptic Clicks</h4>
+            <p class="motion-card-desc">
+              Short impulse clicks synthesized using FM operator feedback and resonant comb filtering, mimicking luxury watch bezels.
+            </p>
+            <div class="motion-code-preview">
+              SYNTH: FM Operator Feedback<br>
+              FILTER: 3.8kHz Comb Resonator<br>
+              DECAY: 14 Milliseconds
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before / After Slider -->
+    <section class="container">
+      <div class="comparison-section">
+        <div class="comparison-header">
+          <div>
+            <span class="label-caps">POST-PRODUCTION BREAKDOWN</span>
+            <h3 class="section-heading" style="font-size: 1.75rem;">CLAY WIREFRAME VS RAY-TRACED COMPOSITE</h3>
+          </div>
+          <span class="mono-tag">DRAG SLIDER TO REVEAL SPECULAR PHOTON CAUSTICS</span>
+        </div>
+
+        <div class="comparison-wrapper" id="beforeAfterSlider">
+          <div class="comparison-layer comparison-layer-after">
+            <img src="../assets/project_synapse.jpg" alt="Final Render with Holographic Lighting">
+            <span class="comparison-badge badge-graded">FINAL COMPOSITE // SPECTRAL CAUSTICS</span>
+          </div>
+
+          <div class="comparison-layer comparison-layer-before">
+            <img src="../assets/log_raw_footage.jpg" alt="Raw Clay CAD Model Wireframe">
+            <span class="comparison-badge badge-raw">PRE-VIS // RAW CLAY GEOMETRY</span>
+          </div>
+
+          <div class="comparison-handle" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M6 4.5L1.5 9 6 13.5M12 4.5l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sound Design Stem Breakdown -->
+    <section class="container">
+      <div class="sound-design-section">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <span class="label-caps">HAPTIC AUDIO ARCHITECTURE</span>
+            <h3 class="section-heading" style="font-size: 1.75rem;">SPATIAL HAPTIC SOUND STEMS</h3>
+            <p class="section-subheading">Acoustic tactile feedback synthesized in Ableton Live Operator.</p>
+          </div>
+          <span class="mono-tag">AUDIO RESOLUTION: 96kHz / 24-BIT</span>
+        </div>
+
+        <div class="sound-stem-rack">
+          <div class="stem-track">
+            <div class="stem-info">
+              <span class="stem-name">01 // ROTARY DIAL DETENTS</span>
+              <span class="stem-spec">Precision Ratchet Impulse (12ms decay)</span>
+            </div>
+            <div class="stem-waveform-container"></div>
+            <div class="stem-controls">
+              <button class="stem-btn" data-action="mute">MUTE</button>
+              <button class="stem-btn" data-action="solo">SOLO</button>
+            </div>
+          </div>
+
+          <div class="stem-track">
+            <div class="stem-info">
+              <span class="stem-name">02 // VOLUMETRIC RAY EMISSION</span>
+              <span class="stem-spec">Sub-harmonic Resonant Shimmer (5.2kHz Peak)</span>
+            </div>
+            <div class="stem-waveform-container"></div>
+            <div class="stem-controls">
+              <button class="stem-btn" data-action="mute">MUTE</button>
+              <button class="stem-btn" data-action="solo">SOLO</button>
+            </div>
+          </div>
+
+          <div class="stem-track">
+            <div class="stem-info">
+              <span class="stem-name">03 // AMBIENT SYSTEM DRONE</span>
+              <span class="stem-spec">Pure 40Hz Sine Hum with Tape Flange</span>
+            </div>
+            <div class="stem-waveform-container"></div>
+            <div class="stem-controls">
+              <button class="stem-btn" data-action="mute">MUTE</button>
+              <button class="stem-btn" data-action="solo">SOLO</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Next Project Banner (Loops back to 01) -->
+    <section class="next-project-section">
+      <div class="container">
+        <a href="i75-cpa-review.html" class="next-project-link">
+          <div>
+            <p class="next-project-label">NEXT PROJECT / 01</p>
+            <h2 class="next-project-title">
+              I75 CPA REVIEW
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </h2>
+            <p style="font-size: 0.9375rem; color: var(--text-secondary); margin-top: 10px;">
+              Commercial trailer distilling complex financial certification frameworks into dynamic visual modules.
+            </p>
+          </div>
+          <div class="next-project-thumbnail">
+            <img src="../assets/project_cpa_review.jpg" alt="I75 CPA Review Project Thumbnail">
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">ARNAV KUMAR</span>
+        <span class="footer-copyright">&copy; 2026 ARNAV KUMAR. ALL RIGHTS RESERVED.</span>
+        <a href="../index.html#contact" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dark);">START A PROJECT →</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/cinema-canvas.js"></script>
+  <script src="../js/case-study.js"></script>
+</body>
+</html>
