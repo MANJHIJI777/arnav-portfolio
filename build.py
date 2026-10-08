@@ -20,8 +20,7 @@ required_html_files = [
     'index.html',
     'projects/work1.html',
     'projects/work2.html',
-    'projects/work3.html',
-    'projects/work4.html'
+    'projects/work3.html'
 ]
 
 print("[1/5] Checking essential HTML routes...")
@@ -57,12 +56,9 @@ required_media = [
     'assets/work1.mp4',
     'assets/work2.mp4',
     'assets/work3.mp4',
-    'assets/work4.mp4',
-    'assets/work2_720p.mp4',
     'assets/work1_poster.jpg',
     'assets/work2_poster.jpg',
     'assets/work3_poster.jpg',
-    'assets/work4_poster.jpg',
     'assets/showreel_poster.jpg',
     'assets/editor_portrait.jpg'
 ]

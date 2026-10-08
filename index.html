@@ -118,47 +118,6 @@
     </section>
 
     <!-- ======================================================================
-         FEATURED SHOWREEL (THE VISUAL CENTERPIECE)
-         ====================================================================== -->
-    <section class="showreel-section">
-      <div class="container">
-        <div class="showreel-frame js-open-showreel fade-up" data-cursor="play" role="button" aria-label="Play 2026 Editorial Showreel">
-          <video class="showreel-media" muted loop autoplay playsinline preload="auto" poster="assets/work2_poster.jpg">
-            <source src="assets/work2_720p.mp4" type="video/mp4" media="(max-width: 768px)">
-            <source src="assets/work2.mp4" type="video/mp4">
-          </video>
-
-          <div class="showreel-overlay">
-            <!-- Top bar -->
-            <div class="showreel-top-bar">
-              <span class="showreel-badge">
-                <span class="rec-indicator"></span>
-                2026 SHOWREEL
-              </span>
-              <span class="showreel-badge">4K MASTER // 24 FPS</span>
-            </div>
-
-            <!-- Center play icon -->
-            <div class="showreel-center-play">
-              <div class="play-circle">
-                <svg viewBox="0 0 24 24">
-                  <polygon points="6,3 20,12 6,21"></polygon>
-                </svg>
-              </div>
-              <span class="play-text">PLAY SHOWREEL</span>
-            </div>
-
-            <!-- Bottom bar -->
-            <div class="showreel-bottom-bar">
-              <span class="showreel-title">Cinematic, Commercial &amp; Creator Works</span>
-              <span class="showreel-runtime">02:14 / 24 FPS</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
          SELECTED WORK SECTION
          ====================================================================== -->
     <section class="section-spacer" id="work">
@@ -173,7 +132,7 @@
 
           <!-- Category Filter Pills -->
           <div class="work-filter-pills" role="tablist" aria-label="Filter projects">
-            <button class="filter-pill active" data-filter="all" role="tab">ALL (04)</button>
+            <button class="filter-pill active" data-filter="all" role="tab">ALL (03)</button>
             <button class="filter-pill" data-filter="commercial" role="tab">COMMERCIAL</button>
             <button class="filter-pill" data-filter="brand" role="tab">BRAND &amp; MOTION</button>
             <button class="filter-pill" data-filter="shortform" role="tab">VERTICAL / REEL</button>
@@ -183,96 +142,88 @@
         <!-- 2-Column Work Grid -->
         <div class="work-grid">
 
-          <!-- PROJECT 01: WORK 1 -->
-          <article class="project-item editorial-project-card fade-up" data-category="shortform brand commercial" data-cursor="view">
-            <a href="projects/work1.html" class="project-card-link" aria-label="View Work 1 Case Study">
-              <div class="project-info">
-                <div class="project-meta-row">
-                  <span class="project-index">01</span>
-                  <span class="project-category">Short-form / Narrative Cut</span>
-                  <span class="project-year">2025</span>
-                </div>
-                <h3 class="project-title">
-                  <span>WORK 01 // NARRATIVE CUT</span>
-                  <span class="project-title-arrow">↗</span>
-                </h3>
-                <p class="project-description">
-                  Cinematic vertical cut engineered with rapid pacing, precision match cuts, and custom atmospheric sound design.
-                </p>
-                <div class="project-cta-row">
-                  <span class="project-view-badge">VIEW CASE STUDY →</span>
-                </div>
+          <!-- PROJECT 01: WORK 1 (VERTICAL 9:16) -->
+          <article class="project-item fade-up" data-category="shortform brand commercial" data-cursor="view">
+            <a href="projects/work1.html" class="project-thumbnail-wrapper aspect-vertical" aria-label="View Work 1 Video Project">
+              <video class="project-video-preview" muted loop playsinline preload="none" poster="assets/work1_poster.jpg" data-src="assets/work1.mp4"></video>
+              <span class="project-video-badge">▶ 9:16 VERTICAL // 00:45</span>
+              <div class="project-hover-overlay">
+                <span class="project-view-indicator">
+                  WATCH VIDEO / CASE STUDY
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5l7-7M9.5 9.5V2.5H2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                </span>
               </div>
             </a>
+            <div class="project-info">
+              <div class="project-meta-row">
+                <span class="project-index">01</span>
+                <span class="project-category">Short-form / Narrative Cut</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">
+                <a href="projects/work1.html">WORK 01 // NARRATIVE CUT</a>
+                <span class="project-title-arrow">↗</span>
+              </h3>
+              <p class="project-description">
+                Cinematic vertical cut engineered with rapid pacing, precision match cuts, and custom atmospheric sound design.
+              </p>
+            </div>
           </article>
 
-          <!-- PROJECT 02: WORK 2 -->
-          <article class="project-item editorial-project-card fade-up" data-category="commercial brand" data-cursor="view">
-            <a href="projects/work2.html" class="project-card-link" aria-label="View Work 2 Case Study">
-              <div class="project-info">
-                <div class="project-meta-row">
-                  <span class="project-index">02</span>
-                  <span class="project-category">Brand / Commercial Spot</span>
-                  <span class="project-year">2025</span>
-                </div>
-                <h3 class="project-title">
-                  <span>WORK 02 // COMMERCIAL SPOT</span>
-                  <span class="project-title-arrow">↗</span>
-                </h3>
-                <p class="project-description">
-                  High-velocity commercial cut with speed-ramped cut frequencies, kinetic text choreography, and punchy sub-bass impacts.
-                </p>
-                <div class="project-cta-row">
-                  <span class="project-view-badge">VIEW CASE STUDY →</span>
-                </div>
+          <!-- PROJECT 02: WORK 2 (HORIZONTAL 16:9) -->
+          <article class="project-item fade-up" data-category="commercial brand" data-cursor="view">
+            <a href="projects/work2.html" class="project-thumbnail-wrapper aspect-horizontal" aria-label="View Work 2 Video Project">
+              <video class="project-video-preview" muted loop playsinline preload="none" poster="assets/work2_poster.jpg" data-src="assets/work2.mp4"></video>
+              <span class="project-video-badge">▶ 16:9 HORIZONTAL // 00:15</span>
+              <div class="project-hover-overlay">
+                <span class="project-view-indicator">
+                  WATCH VIDEO / CASE STUDY
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5l7-7M9.5 9.5V2.5H2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                </span>
               </div>
             </a>
+            <div class="project-info">
+              <div class="project-meta-row">
+                <span class="project-index">02</span>
+                <span class="project-category">Brand / Commercial Spot</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">
+                <a href="projects/work2.html">WORK 02 // COMMERCIAL SPOT</a>
+                <span class="project-title-arrow">↗</span>
+              </h3>
+              <p class="project-description">
+                High-velocity commercial cut with speed-ramped cut frequencies, kinetic text choreography, and punchy sub-bass impacts.
+              </p>
+            </div>
           </article>
 
-          <!-- PROJECT 03: WORK 3 -->
-          <article class="project-item editorial-project-card fade-up" data-category="commercial brand" data-cursor="view">
-            <a href="projects/work3.html" class="project-card-link" aria-label="View Work 3 Case Study">
-              <div class="project-info">
-                <div class="project-meta-row">
-                  <span class="project-index">03</span>
-                  <span class="project-category">Motion Design / Film</span>
-                  <span class="project-year">2025</span>
-                </div>
-                <h3 class="project-title">
-                  <span>WORK 03 // MOTION &amp; RHYTHM</span>
-                  <span class="project-title-arrow">↗</span>
-                </h3>
-                <p class="project-description">
-                  Dynamic visual narrative with fluid scene transitions, typographic pacing, and polished widescreen framing.
-                </p>
-                <div class="project-cta-row">
-                  <span class="project-view-badge">VIEW CASE STUDY →</span>
-                </div>
+          <!-- PROJECT 03: WORK 3 (HORIZONTAL 16:9) -->
+          <article class="project-item fade-up" data-category="commercial brand" data-cursor="view">
+            <a href="projects/work3.html" class="project-thumbnail-wrapper aspect-horizontal" aria-label="View Work 3 Video Project">
+              <video class="project-video-preview" muted loop playsinline preload="none" poster="assets/work3_poster.jpg" data-src="assets/work3.mp4"></video>
+              <span class="project-video-badge">▶ 16:9 HORIZONTAL // 01:30</span>
+              <div class="project-hover-overlay">
+                <span class="project-view-indicator">
+                  WATCH VIDEO / CASE STUDY
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 9.5l7-7M9.5 9.5V2.5H2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                </span>
               </div>
             </a>
-          </article>
-
-          <!-- PROJECT 04: WORK 4 -->
-          <article class="project-item editorial-project-card fade-up" data-category="shortform brand" data-cursor="view">
-            <a href="projects/work4.html" class="project-card-link" aria-label="View Work 4 Case Study">
-              <div class="project-info">
-                <div class="project-meta-row">
-                  <span class="project-index">04</span>
-                  <span class="project-category">Creator / Short-form Reel</span>
-                  <span class="project-year">2025</span>
-                </div>
-                <h3 class="project-title">
-                  <span>WORK 04 // VISUAL SHOWCASE</span>
-                  <span class="project-title-arrow">↗</span>
-                </h3>
-                <p class="project-description">
-                  Fast-paced vertical reel engineered for mobile platforms, featuring rhythmic cuts, speed shifts, and vivid color tones.
-                </p>
-                <div class="project-cta-row">
-                  <span class="project-view-badge">VIEW CASE STUDY →</span>
-                </div>
+            <div class="project-info">
+              <div class="project-meta-row">
+                <span class="project-index">03</span>
+                <span class="project-category">Motion Design / Film</span>
+                <span class="project-year">2025</span>
               </div>
-            </a>
+              <h3 class="project-title">
+                <a href="projects/work3.html">WORK 03 // MOTION &amp; RHYTHM</a>
+                <span class="project-title-arrow">↗</span>
+              </h3>
+              <p class="project-description">
+                Dynamic visual narrative with fluid scene transitions, typographic pacing, and polished widescreen framing.
+              </p>
+            </div>
           </article>
 
         </div>
@@ -634,29 +585,6 @@
     </div>
   </footer>
 
-  <!-- ========================================================================
-       SHOWREEL MODAL
-       ======================================================================== -->
-  <div class="modal-backdrop" id="showreelModal" role="dialog" aria-modal="true" aria-label="Editorial Showreel Video Player">
-    <div class="modal-container">
-      <button class="modal-close-btn" id="closeShowreelModal" aria-label="Close Showreel">✕</button>
-      <div class="modal-video-wrap">
-        <video id="modalShowreelVideo" playsinline preload="none" poster="assets/work3_poster.jpg" data-src="assets/work3.mp4" style="width: 100%; height: 100%; object-fit: contain; background: #000;"></video>
-        <canvas id="modalShowreelCanvas" style="display: none;"></canvas>
-      </div>
-      <div class="modal-video-controls">
-        <div style="display: flex; align-items: center; gap: 16px;">
-          <button id="modalPlayToggle" class="btn-primary" style="padding: 6px 14px; font-size: 0.6875rem;">PLAY</button>
-          <button id="modalAudioToggle" class="btn-secondary" style="padding: 6px 10px; font-size: 0.6875rem; color: #fff;">UNMUTE 🔊</button>
-          <span id="modalTimecode" class="mono-tag" style="color: var(--white);">00:00:00:00</span>
-        </div>
-        <div id="modalProgressBar" style="flex: 1; margin: 0 24px; height: 4px; background: #333; border-radius: 2px; cursor: pointer; position: relative;">
-          <div id="modalProgressFill" style="width: 0%; height: 100%; background: #fff; border-radius: 2px;"></div>
-        </div>
-        <div class="mono-tag" style="color: var(--text-dark-secondary);">SPACE: PLAY/PAUSE // ESC: CLOSE</div>
-      </div>
-    </div>
-  </div>
 
   <!-- ========================================================================
        PROJECT INQUIRY MODAL

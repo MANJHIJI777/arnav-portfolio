@@ -693,30 +693,26 @@ ul, ol {
   border-color: var(--text-primary);
 }
 
-/* 2-Column Editorial Work Grid */
+/* 2-Column Editorial Work Grid (Masonry Columns) */
 .work-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(20px, 2.5vw, 32px);
+  display: block;
+  columns: 2;
+  column-gap: clamp(24px, 3vw, 40px);
 }
 
 .project-item {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  break-inside: avoid;
+  margin-bottom: clamp(36px, 5vw, 64px);
   transition: opacity var(--t-normal), transform var(--t-normal);
-  height: 100%;
 }
 
 @media (max-width: 768px) {
   .work-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    columns: 1;
   }
-}
-
-/* Editorial Project Card (Clean Video-Free Card Layout) */
-.editorial-project-card {
-  margin-bottom: 0;
 }
 
 .project-card-link {
@@ -943,8 +939,7 @@ ul, ol {
 
 @media (max-width: 768px) {
   .work-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    columns: 1;
   }
 
   .work-header {

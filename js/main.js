@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initCustomCursor();
   initScrollReveals();
   initWorkFilters();
-  initShowreelModal();
   initEmailCopy();
   initFooterTimecode();
   initMobileNav();
   initInquiryModal();
+  initHoverVideoPreviews();
 });
 
 /* ==========================================================================
@@ -133,175 +133,6 @@ function initWorkFilters() {
   });
 }
 
-/* ==========================================================================
-   4. SHOWREEL MODAL & CINEMA PLAYER
-   ========================================================================== */
-function initShowreelModal() {
-  const openTriggers = document.querySelectorAll('.js-open-showreel');
-  const modal = document.getElementById('showreelModal');
-  const closeBtn = document.getElementById('closeShowreelModal');
-  const modalCanvas = document.getElementById('modalShowreelCanvas');
-  const modalVideo = document.getElementById('modalShowreelVideo');
-  const modalPlayToggle = document.getElementById('modalPlayToggle');
-  const modalTimecode = document.getElementById('modalTimecode');
-  const modalProgressBar = document.getElementById('modalProgressBar');
-  const modalProgressFill = document.getElementById('modalProgressFill');
-
-  const modalAudioToggle = document.getElementById('modalAudioToggle');
-
-  if (!modal) return;
-
-  function formatTC(secs) {
-    if (isNaN(secs)) return '00:00:00:00';
-    const totalFrames = Math.floor(secs * 24);
-    const ff = String(totalFrames % 24).padStart(2, '0');
-    const s = Math.floor(secs);
-    const ss = String(s % 60).padStart(2, '0');
-    const mm = String(Math.floor(s / 60) % 60).padStart(2, '0');
-    const hh = String(Math.floor(s / 3600)).padStart(2, '0');
-    return `${hh}:${mm}:${ss}:${ff}`;
-  }
-
-  let cinemaEngine = null;
-  if (modalCanvas && window.CinemaCanvasEngine) {
-    cinemaEngine = new window.CinemaCanvasEngine(modalCanvas, {
-      posterSrc: 'assets/showreel_poster.jpg',
-      title: '2026 EDITORIAL SHOWREEL',
-      duration: 38,
-      fps: 24
-    });
-
-    modalCanvas.addEventListener('cinematimeupdate', (e) => {
-      const { timecode, progress } = e.detail;
-      if (!modalVideo || modalVideo.paused) {
-        if (modalTimecode) modalTimecode.textContent = timecode;
-        if (modalProgressFill) modalProgressFill.style.width = `${progress * 100}%`;
-      }
-    });
-  }
-
-  if (modalVideo) {
-    modalVideo.addEventListener('timeupdate', () => {
-      if (modalVideo.duration) {
-        const prog = modalVideo.currentTime / modalVideo.duration;
-        if (modalProgressFill) modalProgressFill.style.width = `${prog * 100}%`;
-        if (modalTimecode) modalTimecode.textContent = formatTC(modalVideo.currentTime);
-      }
-    });
-
-    modalVideo.addEventListener('play', () => {
-      if (modalPlayToggle) modalPlayToggle.textContent = 'PAUSE';
-    });
-
-    modalVideo.addEventListener('pause', () => {
-      if (modalPlayToggle) modalPlayToggle.textContent = 'PLAY';
-    });
-  }
-
-  function openModal(customVideoSrc) {
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-
-    if (modalVideo) {
-      const targetSrc = customVideoSrc || modalVideo.getAttribute('data-src') || 'assets/work3.mp4';
-      if (!modalVideo.src || (!modalVideo.src.endsWith(targetSrc) && modalVideo.src !== targetSrc)) {
-        modalVideo.src = targetSrc;
-        modalVideo.load();
-      }
-      modalVideo.currentTime = 0;
-      const playPromise = modalVideo.play();
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
-          if (modalPlayToggle) modalPlayToggle.textContent = 'PAUSE';
-        }).catch(() => {
-          // Autoplay with sound blocked, fallback to muted
-          modalVideo.muted = true;
-          modalVideo.play().catch(() => {});
-          if (modalAudioToggle) modalAudioToggle.textContent = 'UNMUTE 🔇';
-        });
-      }
-    } else if (cinemaEngine) {
-      cinemaEngine.play();
-    }
-  }
-
-  function closeModal() {
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
-
-    if (modalVideo) {
-      modalVideo.pause();
-    }
-    if (cinemaEngine) {
-      cinemaEngine.pause();
-    }
-  }
-
-  openTriggers.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const videoSrc = btn.getAttribute('data-video');
-      openModal(videoSrc);
-    });
-  });
-
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
-
-  // Keyboard shortcuts
-  window.addEventListener('keydown', (e) => {
-    if (!modal.classList.contains('open')) return;
-
-    if (e.key === 'Escape') {
-      closeModal();
-    } else if (e.code === 'Space') {
-      e.preventDefault();
-      if (modalVideo) {
-        if (modalVideo.paused) modalVideo.play();
-        else modalVideo.pause();
-      } else if (cinemaEngine) {
-        cinemaEngine.toggle();
-      }
-    }
-  });
-
-  if (modalPlayToggle) {
-    modalPlayToggle.addEventListener('click', () => {
-      if (modalVideo) {
-        if (modalVideo.paused) {
-          modalVideo.play();
-        } else {
-          modalVideo.pause();
-        }
-      } else if (cinemaEngine) {
-        const isPlaying = cinemaEngine.toggle();
-        modalPlayToggle.textContent = isPlaying ? 'PAUSE' : 'PLAY';
-      }
-    });
-  }
-
-  if (modalAudioToggle && modalVideo) {
-    modalAudioToggle.addEventListener('click', () => {
-      modalVideo.muted = !modalVideo.muted;
-      modalAudioToggle.textContent = modalVideo.muted ? 'UNMUTE 🔇' : 'MUTE 🔊';
-    });
-  }
-
-  if (modalProgressBar) {
-    modalProgressBar.addEventListener('click', (e) => {
-      const rect = modalProgressBar.getBoundingClientRect();
-      const clickRatio = (e.clientX - rect.left) / rect.width;
-      if (modalVideo && modalVideo.duration) {
-        modalVideo.currentTime = clickRatio * modalVideo.duration;
-      } else if (cinemaEngine) {
-        cinemaEngine.seek(clickRatio);
-      }
-    });
-  }
-}
 
 /* ==========================================================================
    5. EMAIL COPY TO CLIPBOARD
@@ -441,3 +272,67 @@ function initInquiryModal() {
   }
 }
 
+/* ==========================================================================
+   9. HOVER VIDEO PREVIEWS ON SELECTED WORK
+   ========================================================================== */
+function initHoverVideoPreviews() {
+  const cards = document.querySelectorAll('.project-item');
+  if (!cards.length) return;
+
+  function loadCardVideo(video) {
+    if (!video || video.dataset.loaded === 'true') return;
+    const dataSrc = video.getAttribute('data-src');
+    if (dataSrc) {
+      video.src = dataSrc;
+      video.preload = 'metadata';
+      video.dataset.loaded = 'true';
+    }
+  }
+
+  // IntersectionObserver to lazy load video sources when within 250px of viewport
+  if ('IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const video = entry.target.querySelector('.project-video-preview');
+          if (video) {
+            loadCardVideo(video);
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '250px 0px',
+      threshold: 0.01
+    });
+
+    cards.forEach(card => videoObserver.observe(card));
+  } else {
+    cards.forEach(card => {
+      const video = card.querySelector('.project-video-preview');
+      loadCardVideo(video);
+    });
+  }
+
+  // Hover playback handling
+  cards.forEach(card => {
+    const video = card.querySelector('.project-video-preview');
+    if (!video) return;
+
+    card.addEventListener('mouseenter', () => {
+      loadCardVideo(video);
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {});
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      video.pause();
+      try {
+        video.currentTime = 0;
+      } catch (e) {}
+    });
+  });
+}
