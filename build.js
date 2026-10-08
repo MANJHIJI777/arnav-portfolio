@@ -20,7 +20,9 @@ let hasErrors = false;
 const requiredHtmlFiles = [
   'index.html',
   'projects/work2.html',
-  'projects/work3.html'
+  'projects/work3.html',
+  'projects/work4.html',
+  'projects/work5.html'
 ];
 
 console.log('[1/5] Checking essential HTML routes...');
@@ -59,8 +61,12 @@ for (const file of requiredAssets) {
 const requiredMedia = [
   'assets/work2.mp4',
   'assets/work3.mp4',
+  'assets/7th.mp4',
+  'assets/8th.mp4',
   'assets/work2_poster.jpg',
   'assets/work3_poster.jpg',
+  'assets/7th_poster.jpg',
+  'assets/8th_poster.jpg',
   'assets/showreel_poster.jpg',
   'assets/editor_portrait.jpg'
 ];
