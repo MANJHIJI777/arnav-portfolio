@@ -18,7 +18,6 @@ has_errors = False
 # 1. Verify Core HTML Entrypoints
 required_html_files = [
     'index.html',
-    'projects/work1.html',
     'projects/work2.html',
     'projects/work3.html'
 ]
@@ -53,10 +52,8 @@ for f in required_assets:
 
 # 3. Verify Video & Media Assets (and GitHub/Vercel size constraints < 100MB)
 required_media = [
-    'assets/work1.mp4',
     'assets/work2.mp4',
     'assets/work3.mp4',
-    'assets/work1_poster.jpg',
     'assets/work2_poster.jpg',
     'assets/work3_poster.jpg',
     'assets/showreel_poster.jpg',

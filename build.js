@@ -19,7 +19,6 @@ let hasErrors = false;
 // 1. Verify Core HTML Entrypoints
 const requiredHtmlFiles = [
   'index.html',
-  'projects/work1.html',
   'projects/work2.html',
   'projects/work3.html'
 ];
@@ -58,10 +57,8 @@ for (const file of requiredAssets) {
 
 // 3. Verify Video & Media Assets (and GitHub/Vercel size constraints < 100MB)
 const requiredMedia = [
-  'assets/work1.mp4',
   'assets/work2.mp4',
   'assets/work3.mp4',
-  'assets/work1_poster.jpg',
   'assets/work2_poster.jpg',
   'assets/work3_poster.jpg',
   'assets/showreel_poster.jpg',
