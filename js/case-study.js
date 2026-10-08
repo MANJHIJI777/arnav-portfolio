@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSoundDesignStems();
   initCaseVideoPlayer();
   initScrollReveals();
+  initNextProjectVideo();
 });
 
 /* ==========================================================================
@@ -261,4 +262,47 @@ function initScrollReveals() {
   });
 
   fadeElements.forEach(el => observer.observe(el));
+}
+
+function initNextProjectVideo() {
+  const nextVideo = document.querySelector('.next-project-video');
+  if (!nextVideo) return;
+
+  function loadNextVideo() {
+    if (nextVideo.dataset.loaded === 'true') return;
+    const dataSrc = nextVideo.getAttribute('data-src');
+    if (dataSrc) {
+      nextVideo.src = dataSrc;
+      nextVideo.preload = 'metadata';
+      nextVideo.dataset.loaded = 'true';
+    }
+  }
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          loadNextVideo();
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: '300px 0px',
+      threshold: 0.01
+    });
+    observer.observe(nextVideo);
+  } else {
+    loadNextVideo();
+  }
+
+  const container = nextVideo.closest('.next-project-link') || nextVideo;
+  container.addEventListener('mouseenter', () => {
+    loadNextVideo();
+    const playPromise = nextVideo.play();
+    if (playPromise !== undefined) playPromise.catch(() => {});
+  });
+  container.addEventListener('mouseleave', () => {
+    nextVideo.pause();
+    try { nextVideo.currentTime = 0; } catch (e) {}
+  });
 }

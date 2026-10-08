@@ -204,8 +204,10 @@ function initShowreelModal() {
     document.body.style.overflow = 'hidden';
 
     if (modalVideo) {
-      if (customVideoSrc) {
-        modalVideo.src = customVideoSrc;
+      const targetSrc = customVideoSrc || modalVideo.getAttribute('data-src') || 'assets/work3.mp4';
+      if (!modalVideo.src || (!modalVideo.src.endsWith(targetSrc) && modalVideo.src !== targetSrc)) {
+        modalVideo.src = targetSrc;
+        modalVideo.load();
       }
       modalVideo.currentTime = 0;
       const playPromise = modalVideo.play();
@@ -445,26 +447,51 @@ function initInquiryModal() {
    ========================================================================== */
 function initHoverVideoPreviews() {
   const cards = document.querySelectorAll('.project-item');
+  if (!cards.length) return;
 
+  function loadCardVideo(video) {
+    if (!video || video.dataset.loaded === 'true') return;
+    const dataSrc = video.getAttribute('data-src');
+    if (dataSrc) {
+      video.src = dataSrc;
+      video.preload = 'metadata';
+      video.dataset.loaded = 'true';
+    }
+  }
+
+  // Use IntersectionObserver to lazy load video sources when within 300px of viewport
+  if ('IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const video = entry.target.querySelector('.project-video-preview');
+          if (video) {
+            loadCardVideo(video);
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '300px 0px',
+      threshold: 0.01
+    });
+
+    cards.forEach(card => videoObserver.observe(card));
+  } else {
+    cards.forEach(card => {
+      const video = card.querySelector('.project-video-preview');
+      loadCardVideo(video);
+    });
+  }
+
+  // Hover playback handling
   cards.forEach(card => {
     const video = card.querySelector('.project-video-preview');
     if (!video) return;
 
-    const setFrame = () => {
-      if (video.paused && video.currentTime === 0) {
-        try {
-          video.currentTime = 0.001;
-        } catch (e) {}
-      }
-    };
-
-    if (video.readyState >= 1) {
-      setFrame();
-    } else {
-      video.addEventListener('loadedmetadata', setFrame, { once: true });
-    }
-
     card.addEventListener('mouseenter', () => {
+      loadCardVideo(video);
       const playPromise = video.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {});
@@ -474,7 +501,7 @@ function initHoverVideoPreviews() {
     card.addEventListener('mouseleave', () => {
       video.pause();
       try {
-        video.currentTime = 0.001;
+        video.currentTime = 0;
       } catch (e) {}
     });
   });

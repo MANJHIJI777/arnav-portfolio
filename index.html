@@ -123,8 +123,9 @@
     <section class="showreel-section">
       <div class="container">
         <div class="showreel-frame js-open-showreel fade-up" data-cursor="play" role="button" aria-label="Play 2026 Editorial Showreel">
-          <video class="showreel-media" muted loop autoplay playsinline preload="metadata">
-            <source src="assets/work2.mp4#t=0.001" type="video/mp4">
+          <video class="showreel-media" muted loop autoplay playsinline preload="auto" poster="assets/work2_poster.jpg">
+            <source src="assets/work2_720p.mp4" type="video/mp4" media="(max-width: 768px)">
+            <source src="assets/work2.mp4" type="video/mp4">
           </video>
 
           <div class="showreel-overlay">
@@ -185,9 +186,7 @@
           <!-- PROJECT 01: WORK 1 (VERTICAL 9:16) -->
           <article class="project-item fade-up" data-category="shortform brand commercial" data-cursor="view">
             <a href="projects/work1.html" class="project-thumbnail-wrapper aspect-vertical" aria-label="View Work 1 Video Project">
-              <video class="project-video-preview" muted loop playsinline preload="metadata">
-                <source src="assets/work1.mp4#t=0.001" type="video/mp4">
-              </video>
+              <video class="project-video-preview" muted loop playsinline preload="none" poster="assets/work1_poster.jpg" data-src="assets/work1.mp4"></video>
               <span class="project-video-badge">▶ 9:16 VERTICAL // 00:38</span>
               <div class="project-hover-overlay">
                 <span class="project-view-indicator">
@@ -215,9 +214,7 @@
           <!-- PROJECT 02: WORK 2 (HORIZONTAL 16:9) -->
           <article class="project-item fade-up" data-category="commercial brand" data-cursor="view">
             <a href="projects/work2.html" class="project-thumbnail-wrapper aspect-horizontal" aria-label="View Work 2 Video Project">
-              <video class="project-video-preview" muted loop playsinline preload="metadata">
-                <source src="assets/work2.mp4#t=0.001" type="video/mp4">
-              </video>
+              <video class="project-video-preview" muted loop playsinline preload="none" poster="assets/work2_poster.jpg" data-src="assets/work2.mp4"></video>
               <span class="project-video-badge">▶ 16:9 HORIZONTAL // 00:15</span>
               <div class="project-hover-overlay">
                 <span class="project-view-indicator">
@@ -245,9 +242,7 @@
           <!-- PROJECT 03: WORK 3 (HORIZONTAL 16:9) -->
           <article class="project-item fade-up" data-category="commercial brand" data-cursor="view">
             <a href="projects/work3.html" class="project-thumbnail-wrapper aspect-horizontal" aria-label="View Work 3 Video Project">
-              <video class="project-video-preview" muted loop playsinline preload="metadata">
-                <source src="assets/work3.mp4#t=0.001" type="video/mp4">
-              </video>
+              <video class="project-video-preview" muted loop playsinline preload="none" poster="assets/work3_poster.jpg" data-src="assets/work3.mp4"></video>
               <span class="project-video-badge">▶ 16:9 HORIZONTAL // 01:30</span>
               <div class="project-hover-overlay">
                 <span class="project-view-indicator">
@@ -275,9 +270,7 @@
           <!-- PROJECT 04: WORK 4 (VERTICAL 9:16) -->
           <article class="project-item fade-up" data-category="shortform brand" data-cursor="view">
             <a href="projects/work4.html" class="project-thumbnail-wrapper aspect-vertical" aria-label="View Work 4 Video Project">
-              <video class="project-video-preview" muted loop playsinline preload="metadata">
-                <source src="assets/work4.mp4#t=0.001" type="video/mp4">
-              </video>
+              <video class="project-video-preview" muted loop playsinline preload="none" poster="assets/work4_poster.jpg" data-src="assets/work4.mp4"></video>
               <span class="project-video-badge">▶ 9:16 VERTICAL // 00:53</span>
               <div class="project-hover-overlay">
                 <span class="project-view-indicator">
@@ -668,9 +661,7 @@
     <div class="modal-container">
       <button class="modal-close-btn" id="closeShowreelModal" aria-label="Close Showreel">✕</button>
       <div class="modal-video-wrap">
-        <video id="modalShowreelVideo" playsinline preload="auto" style="width: 100%; height: 100%; object-fit: contain; background: #000;">
-          <source src="assets/work3.mp4" type="video/mp4">
-        </video>
+        <video id="modalShowreelVideo" playsinline preload="none" poster="assets/work3_poster.jpg" data-src="assets/work3.mp4" style="width: 100%; height: 100%; object-fit: contain; background: #000;"></video>
         <canvas id="modalShowreelCanvas" style="display: none;"></canvas>
       </div>
       <div class="modal-video-controls">
