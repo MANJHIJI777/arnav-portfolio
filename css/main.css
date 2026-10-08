@@ -695,24 +695,83 @@ ul, ol {
 
 /* 2-Column Editorial Work Grid */
 .work-grid {
-  display: block;
-  columns: 2;
-  column-gap: clamp(24px, 3vw, 40px);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 2.5vw, 32px);
 }
 
 .project-item {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  break-inside: avoid;
-  margin-bottom: clamp(36px, 5vw, 64px);
   transition: opacity var(--t-normal), transform var(--t-normal);
+  height: 100%;
 }
 
 @media (max-width: 768px) {
   .work-grid {
-    columns: 1;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
+}
+
+/* Editorial Project Card (Clean Video-Free Card Layout) */
+.editorial-project-card {
+  margin-bottom: 0;
+}
+
+.project-card-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  background-color: #0E0E0E;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-subtle);
+  padding: clamp(24px, 3vw, 36px);
+  transition: border-color var(--t-fast), transform var(--t-fast), background-color var(--t-fast);
+}
+
+.project-card-link:hover {
+  border-color: var(--border-medium);
+  background-color: #141414;
+  transform: translateY(-2px);
+}
+
+.project-card-link .project-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 14px;
+}
+
+.project-card-link .project-meta-row {
+  margin-bottom: 4px;
+}
+
+.project-card-link .project-title {
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+}
+
+.project-cta-row {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.project-view-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  transition: color var(--t-fast);
+}
+
+.project-card-link:hover .project-view-badge {
+  color: var(--white);
 }
 
 .project-thumbnail-wrapper {
@@ -885,7 +944,7 @@ ul, ol {
 @media (max-width: 768px) {
   .work-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 20px;
   }
 
   .work-header {
