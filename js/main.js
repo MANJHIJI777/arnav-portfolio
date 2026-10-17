@@ -234,8 +234,34 @@ function initInquiryModal() {
   const modal = document.getElementById('inquiryModal');
   const closeBtn = document.getElementById('closeInquiryModal');
   const form = document.getElementById('inquiryForm');
+  const typeSelect = document.getElementById('inqType');
+  const budgetInput = document.getElementById('inqBudget');
 
   if (!modal) return;
+
+  const PRICE_MAP = {
+    'Short Form / Reel': '$30 – $80',
+    'Long Form / YouTube': '$60 – $150'
+  };
+
+  function updatePriceRange() {
+    if (!typeSelect || !budgetInput) return;
+    const selectedCategory = typeSelect.value;
+    const priceRange = PRICE_MAP[selectedCategory] || '';
+    budgetInput.value = priceRange;
+  }
+
+  if (typeSelect) {
+    typeSelect.addEventListener('change', updatePriceRange);
+    updatePriceRange();
+  }
+
+  // Ensure price range field cannot be manually changed, typed into, or pasted into
+  if (budgetInput) {
+    budgetInput.addEventListener('keydown', (e) => e.preventDefault());
+    budgetInput.addEventListener('paste', (e) => e.preventDefault());
+    budgetInput.addEventListener('drop', (e) => e.preventDefault());
+  }
 
   function openModal() {
     modal.classList.add('open');
@@ -254,17 +280,36 @@ function initInquiryModal() {
     if (e.target === modal) closeModal();
   });
 
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) {
+      closeModal();
+    }
+  });
+
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('inqName').value || 'Collaborator';
-      const projectType = document.getElementById('inqType').value || 'Video Editing';
-      const budget = document.getElementById('inqBudget').value || 'Flexible';
-      const details = document.getElementById('inqDetails').value || '';
+      const name = document.getElementById('inqName').value.trim() || 'Collaborator';
+      const selectedCategory = typeSelect ? typeSelect.value : '';
 
-      const subject = encodeURIComponent(`Project Inquiry: ${projectType} — ${name}`);
+      // Validate category selection
+      if (!selectedCategory || !PRICE_MAP[selectedCategory]) {
+        alert('Please select a project category (Short Form / Reel or Long Form / YouTube).');
+        if (typeSelect) typeSelect.focus();
+        return;
+      }
+
+      // Calculate/validate price range directly from selected category
+      const priceRange = PRICE_MAP[selectedCategory];
+      if (budgetInput) {
+        budgetInput.value = priceRange;
+      }
+
+      const details = document.getElementById('inqDetails').value.trim() || 'No additional scope provided.';
+
+      const subject = encodeURIComponent(`Project Inquiry: ${selectedCategory} (${priceRange}) — ${name}`);
       const body = encodeURIComponent(
-        `Hi Arnav,\n\nName: ${name}\nProject Type: ${projectType}\nEstimated Budget: ${budget}\n\nProject Scope:\n${details}\n\nLooking forward to hearing from you!`
+        `Hi Arnav,\n\nName: ${name}\nProject Category: ${selectedCategory}\nPrice Range: ${priceRange}\n\nProject Scope & Target Deadline:\n${details}\n\nLooking forward to hearing from you!`
       );
 
       window.location.href = `mailto:workwitharnav.creative@gmail.com?subject=${subject}&body=${body}`;

@@ -699,23 +699,16 @@
 
         <div class="inquiry-form-group">
           <label class="inquiry-label" for="inqType">Project Category</label>
-          <select id="inqType" class="inquiry-select">
-            <option value="Commercial / Brand Trailer">Commercial / Brand Trailer</option>
-            <option value="Short-Form Social Campaign">Short-Form Social Campaign (Reels / Shorts)</option>
-            <option value="Long-Form Documentary / YouTube">Long-Form Documentary / YouTube</option>
-            <option value="Motion Design & Title Sequences">Motion Design & Title Sequences</option>
-            <option value="Full Post-Production (Edit + Color + Sound)">Full Post-Production (Edit + Color + Sound)</option>
+          <select id="inqType" class="inquiry-select" required>
+            <option value="" disabled selected>Select a category...</option>
+            <option value="Short Form / Reel">Short Form / Reel</option>
+            <option value="Long Form / YouTube">Long Form / YouTube</option>
           </select>
         </div>
 
         <div class="inquiry-form-group">
-          <label class="inquiry-label" for="inqBudget">Estimated Budget Range</label>
-          <select id="inqBudget" class="inquiry-select">
-            <option value="$2,500 – $5,000">$2,500 – $5,000</option>
-            <option value="$5,000 – $10,000">$5,000 – $10,000</option>
-            <option value="$10,000+">$10,000+</option>
-            <option value="Retainer / Ongoing">Monthly Retainer</option>
-          </select>
+          <label class="inquiry-label" for="inqBudget">Price Range</label>
+          <input type="text" id="inqBudget" name="priceRange" class="inquiry-input inquiry-readonly-price" placeholder="Select a project category first" readonly tabindex="-1" aria-readonly="true">
         </div>
 
         <div class="inquiry-form-group">

@@ -1908,6 +1908,28 @@ ul, ol {
   min-height: 100px;
 }
 
+.inquiry-readonly-price {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: var(--text-primary);
+  cursor: default;
+  user-select: none;
+  font-weight: 500;
+  border-color: var(--border-light);
+  letter-spacing: 0.02em;
+}
+
+.inquiry-readonly-price:focus {
+  border-color: var(--border-light);
+  outline: none;
+  box-shadow: none;
+}
+
+.inquiry-readonly-price::placeholder {
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+
 /* ==========================================================================
    SCROLL REVEAL ANIMATIONS
    ========================================================================== */
