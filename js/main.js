@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initInquiryModal();
   initHoverVideoPreviews();
+  initPortfolioVideoModal();
 });
 
 /* ==========================================================================
@@ -49,7 +50,7 @@ function initCustomCursor() {
 
   viewTargets.forEach((el) => {
     el.addEventListener('mouseenter', () => {
-      cursor.textContent = 'VIEW →';
+      cursor.textContent = el.getAttribute('data-cursor-text') || 'VIEW →';
       cursor.classList.add('visible');
     });
     el.addEventListener('mouseleave', () => {
@@ -59,7 +60,7 @@ function initCustomCursor() {
 
   playTargets.forEach((el) => {
     el.addEventListener('mouseenter', () => {
-      cursor.textContent = 'PLAY REEL';
+      cursor.textContent = el.getAttribute('data-cursor-text') || 'PLAY ▶';
       cursor.classList.add('visible');
     });
     el.addEventListener('mouseleave', () => {
@@ -273,55 +274,42 @@ function initInquiryModal() {
 }
 
 /* ==========================================================================
-   9. HOVER VIDEO PREVIEWS ON SELECTED WORK
+   9. HOVER VIDEO PREVIEWS ON SELECTED WORK (DESKTOP ONLY, ON-DEMAND)
    ========================================================================== */
 function initHoverVideoPreviews() {
   const cards = document.querySelectorAll('.project-item');
   if (!cards.length) return;
 
-  function loadCardVideo(video) {
-    if (!video || video.dataset.loaded === 'true') return;
-    const dataSrc = video.getAttribute('data-src');
-    if (dataSrc) {
-      video.src = dataSrc;
+  // Touch & mobile devices: skip background video previews entirely to eliminate
+  // wasted bandwidth and preserve lightweight poster thumbnails.
+  if (window.matchMedia('(pointer: coarse)').matches) {
+    return;
+  }
+
+  function loadPreview(video) {
+    if (!video) return;
+    if (!video.src && video.getAttribute('data-src')) {
+      video.src = video.getAttribute('data-src');
       video.preload = 'metadata';
-      video.dataset.loaded = 'true';
     }
   }
 
-  // IntersectionObserver to lazy load video sources when within 250px of viewport
-  if ('IntersectionObserver' in window) {
-    const videoObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const video = entry.target.querySelector('.project-video-preview');
-          if (video) {
-            loadCardVideo(video);
-          }
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      root: null,
-      rootMargin: '250px 0px',
-      threshold: 0.01
-    });
-
-    cards.forEach(card => videoObserver.observe(card));
-  } else {
-    cards.forEach(card => {
-      const video = card.querySelector('.project-video-preview');
-      loadCardVideo(video);
-    });
-  }
-
-  // Hover playback handling
   cards.forEach(card => {
     const video = card.querySelector('.project-video-preview');
     if (!video) return;
 
     card.addEventListener('mouseenter', () => {
-      loadCardVideo(video);
+      // Pause any other preview video currently running
+      cards.forEach(otherCard => {
+        if (otherCard !== card) {
+          const otherVideo = otherCard.querySelector('.project-video-preview');
+          if (otherVideo && !otherVideo.paused) {
+            otherVideo.pause();
+          }
+        }
+      });
+
+      loadPreview(video);
       const playPromise = video.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {});
@@ -333,6 +321,179 @@ function initHoverVideoPreviews() {
       try {
         video.currentTime = 0;
       } catch (e) {}
+    });
+  });
+}
+
+/* ==========================================================================
+   10. IN-PAGE PORTFOLIO VIDEO LIGHTBOX MODAL
+   ========================================================================== */
+function initPortfolioVideoModal() {
+  const modal = document.getElementById('portfolioVideoModal');
+  if (!modal) return;
+
+  const container = document.getElementById('portfolioModalContainer');
+  const video = document.getElementById('portfolioModalVideo');
+  const closeBtn = document.getElementById('closePortfolioModal');
+  const titleEl = document.getElementById('modalVideoTitle');
+  const badgeEl = document.getElementById('modalVideoBadge');
+  const caseLink = document.getElementById('modalCaseStudyLink');
+  const spinner = document.getElementById('modalVideoSpinner');
+  const errorBox = document.getElementById('modalVideoError');
+  const retryBtn = document.getElementById('modalVideoRetryBtn');
+
+  let currentVideoData = null;
+
+  function showSpinner() {
+    if (spinner) spinner.classList.add('visible');
+  }
+
+  function hideSpinner() {
+    if (spinner) spinner.classList.remove('visible');
+  }
+
+  function showError() {
+    hideSpinner();
+    if (errorBox) errorBox.style.display = 'flex';
+  }
+
+  function hideError() {
+    if (errorBox) errorBox.style.display = 'none';
+  }
+
+  function openModal(data) {
+    currentVideoData = data;
+    hideError();
+    showSpinner();
+
+    // Pause all background hover preview videos immediately
+    document.querySelectorAll('.project-video-preview').forEach(v => {
+      try {
+        v.pause();
+      } catch (e) {}
+    });
+
+    // Adapt aspect ratio container class
+    if (data.aspect === '9:16') {
+      container.classList.remove('is-horizontal');
+      container.classList.add('is-vertical');
+    } else {
+      container.classList.remove('is-vertical');
+      container.classList.add('is-horizontal');
+    }
+
+    if (titleEl) titleEl.textContent = data.title || 'PORTFOLIO VIDEO';
+    if (badgeEl) badgeEl.textContent = data.badge || (data.aspect === '9:16' ? '9:16 VERTICAL' : '16:9 HORIZONTAL');
+
+    if (caseLink) {
+      if (data.caseStudy) {
+        caseLink.href = data.caseStudy;
+        caseLink.style.display = 'inline-flex';
+      } else {
+        caseLink.style.display = 'none';
+      }
+    }
+
+    // Set poster first, then src
+    if (data.poster) {
+      video.poster = data.poster;
+    }
+    video.src = data.src;
+    video.preload = 'auto';
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    // Attempt autoplay
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          hideSpinner();
+        })
+        .catch(() => {
+          // If browser policy prevents autoplay with sound, hide spinner so user can use native controls
+          hideSpinner();
+        });
+    }
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+
+    // Immediately stop playback and release network buffers & memory
+    try {
+      video.pause();
+      video.removeAttribute('src');
+      video.load();
+    } catch (e) {}
+
+    currentVideoData = null;
+    hideSpinner();
+    hideError();
+  }
+
+  // Buffering indicator state handlers
+  video.addEventListener('waiting', showSpinner);
+  video.addEventListener('seeking', showSpinner);
+  video.addEventListener('canplay', hideSpinner);
+  video.addEventListener('playing', hideSpinner);
+  video.addEventListener('error', () => {
+    // Only display error if a src was actively loaded (ignore src resets on close)
+    if (video.getAttribute('src')) {
+      showError();
+    }
+  });
+
+  if (retryBtn) {
+    retryBtn.addEventListener('click', () => {
+      if (currentVideoData && currentVideoData.src) {
+        hideError();
+        showSpinner();
+        video.src = currentVideoData.src;
+        video.load();
+        video.play().catch(() => hideSpinner());
+      }
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) {
+      closeModal();
+    }
+  });
+
+  // Attach click listener to all portfolio triggers
+  const triggers = document.querySelectorAll('.js-play-portfolio-video');
+  triggers.forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      // Respect user modifier keys (Cmd/Ctrl/Shift to open case study in new tab)
+      if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault();
+
+      const data = {
+        src: trigger.dataset.videoSrc || trigger.getAttribute('data-video-src'),
+        poster: trigger.dataset.videoPoster || trigger.getAttribute('data-video-poster'),
+        title: trigger.dataset.videoTitle || trigger.getAttribute('data-video-title'),
+        aspect: trigger.dataset.videoAspect || trigger.getAttribute('data-video-aspect'),
+        badge: trigger.dataset.videoBadge || trigger.getAttribute('data-video-badge'),
+        caseStudy: trigger.dataset.caseStudy || trigger.getAttribute('data-case-study')
+      };
+
+      if (data.src) {
+        openModal(data);
+      }
     });
   });
 }
